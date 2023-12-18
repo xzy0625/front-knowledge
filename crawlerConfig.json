@@ -1,6 +1,6 @@
 {
-  "index_name": "vueDocs",
-  "start_urls": ["https://xzy0625.github.io/vue-docs/"],
+  "index_name": "front-knowledge",
+  "start_urls": ["https://xzy0625.github.io/front-knowledge/"],
   "rateLimit": 8,
   "maxDepth": 10,
   "selectors": {
