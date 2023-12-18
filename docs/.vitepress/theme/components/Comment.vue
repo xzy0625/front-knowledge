@@ -27,10 +27,10 @@ const { isDark } = useData();
 
 // params generate in https://giscus.app/zh-CN
 const giscusConfig = reactive({
-	repo: "xzy0625/vue-docs",
-	repoId: "R_kgDOKw7SEQ",
+	repo: "xzy0625/front-knowledge",
+	repoId: "R_kgDOK65kBA",
 	category: "Q&A",
-	categoryId: "DIC_kwDOKw7SEc4CbR9g",
+	categoryId: "DIC_kwDOK65kBM4Cb0jK",
 	mapping: "title",
 	strict: "0",
 	reactionsEnabled: "1",

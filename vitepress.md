@@ -5,5 +5,4 @@
 4. 配置github action
 
 ## 配置 giscus
-1. github 开启discussion
-2. https://giscus.app/zh-CN 获取配置
+1. https://giscus.app/zh-CN 获取配置
