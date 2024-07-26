@@ -1,10 +1,10 @@
 export const sidebar = [
   {
-    text: "blog1",
+    text: "浏览器原理",
     items: [
       {
-        text: "index",
-        link: "/blogs/blog1/",
+        text: "事件循环",
+        link: "/blogs/browser/event-loop",
       },
       {
         text: "fisrt",

@@ -1,4 +1,4 @@
-import { sidebar } from './sidebar'
+import { sidebar } from "./sidebar";
 
 export default {
   title: "front-knowledge", // 博客的标题
@@ -16,20 +16,26 @@ export default {
     // https://github.com/signcl/docsearch-scraper-action signcl/docsearch-scraper-action@master自动触发algolia爬虫
     // https://juejin.cn/post/7157340749065895944
     algolia: {
-      appId: '10Y0XEOAO9',
-      apiKey: '48eec56be84836a29f62f7c6e7e2b4b5', // 这里是algolia的key和indexName，请自行前往申请
-      indexName: 'front-knowledge',
-      placeholder: '请输入关键词',
-      buttonText: '搜索',
+      appId: "XE72B9I0D1",
+      apiKey: "a1ba5f870700b3cf3181a2bc6314c4a5", // 这里是algolia的key和indexName，请自行前往申请
+      indexName: "front-knowledge",
+      placeholder: "请输入关键词",
+      buttonText: "搜索",
       searchParameters: {
         // attributesToRetrieve: ['*'],
         // attributesToSnippet: ['*:80'],
-      }
+      },
     },
     nav: [
       // 页面右上角的导航
-      { text: "🌊react18源码解析", link: "https://xzy0625.github.io/react-docs/" },
-      { text: "🌞前端知识日积月累", link: "https://xzy0625.github.io/js-interview/" },
+      {
+        text: "🌊react18源码解析",
+        link: "https://xzy0625.github.io/react-docs/",
+      },
+      {
+        text: "🌞前端知识日积月累",
+        link: "https://xzy0625.github.io/js-interview/",
+      },
       { text: "🔥前端算法(编写中)", link: "/blogs/start/start" },
       { text: "💭个人主页", link: "http://zyxiong.com/" },
       {
@@ -42,17 +48,20 @@ export default {
       },
     ],
     sidebar,
-    docFooter: { prev: '上一篇', next: '下一篇' },
+    docFooter: { prev: "上一篇", next: "下一篇" },
     footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2023-present front-knowledge'
+      message: "Released under the MIT License.",
+      copyright: "Copyright © 2023-present front-knowledge",
     },
     lastUpdatedText: "最近更新时间",
     // 编辑连接
     editLink: {
-      pattern: "https://github.com/xzy0625/front-knowledge/tree/master/docs/:path", // 这里换成自己的github连接
-      text: 'Edit this page on GitHub'
+      pattern:
+        "https://github.com/xzy0625/front-knowledge/tree/master/docs/:path", // 这里换成自己的github连接
+      text: "Edit this page on GitHub",
     },
-    socialLinks: [{ icon: "github", link: "https://github.com/xzy0625/front-knowledge" }], // 可以连接到 github
+    socialLinks: [
+      { icon: "github", link: "https://github.com/xzy0625/front-knowledge" },
+    ], // 可以连接到 github
   },
 };

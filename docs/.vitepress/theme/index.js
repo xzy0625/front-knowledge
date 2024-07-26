@@ -4,7 +4,6 @@ import Comment from "./components/Comment.vue";
 import Donate from "./components/Donate.vue";
 import "./styles/index.css";
 
-
 /**
  * https://vitepress.dev/guide/extending-default-theme
  */
@@ -23,3 +22,4 @@ export default {
     // siteData is a ref of current site-level metadata.
   },
 };
+
