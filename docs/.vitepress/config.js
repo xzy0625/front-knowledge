@@ -16,8 +16,8 @@ export default {
     // https://github.com/signcl/docsearch-scraper-action signcl/docsearch-scraper-action@master自动触发algolia爬虫
     // https://juejin.cn/post/7157340749065895944
     algolia: {
-      appId: "XE72B9I0D1",
-      apiKey: "a1ba5f870700b3cf3181a2bc6314c4a5", // 这里是algolia的key和indexName，请自行前往申请
+      appId: "VGUDH04JX5",
+      apiKey: "621b2f764166bf14e9c112d01e05f8e0", // 这里是algolia的key和indexName，请自行前往申请
       indexName: "front-knowledge",
       placeholder: "请输入关键词",
       buttonText: "搜索",
@@ -31,6 +31,10 @@ export default {
       {
         text: "🌊react18源码解析",
         link: "https://xzy0625.github.io/react-docs/",
+      },
+      {
+        text: "🌛vue3源码解析",
+        link: "https://xzy0625.github.io/vue-docs/",
       },
       {
         text: "🌞前端知识日积月累",
