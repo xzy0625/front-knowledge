@@ -7,6 +7,9 @@ export default {
   lastUpdated: true, // 开启最后更新时间
   themeConfig: {
     logo: "/images/logo.png", // 页面上显示的logo
+    // search: {
+    //   provider: "local",
+    // },
     // algolia搜索 https://blog.csdn.net/weixin_42429718/article/details/128361258
     // 配置详见 https://github.com/vuejs/vitepress/blob/main/types/docsearch.d.ts
     // 这里有一个坑，vitepress会自动给请求带上facetFilter属性，所以我们在crawlerConfig中必须配置lang,然后还要在后台配置facet，添加lang

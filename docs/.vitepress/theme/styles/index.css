@@ -6,6 +6,11 @@
 @import "./inline-demo.css";
 @import "./utilities.css";
 @import "./style-guide.css";
+@import "./vp-code.css";
+@import "./vp-code-group.css";
+@import "./custom-block.css";
+@import "./mark.css";
+@import "./var.css";
 
 /* .vitepress/theme/custom.css */
 :root {
