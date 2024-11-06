@@ -1,4 +1,5 @@
-import { sidebar } from "./sidebar";
+// import { sidebar } from "./sidebar";
+import { sidebar } from "./sidebar/index";
 
 export default {
   title: "front-knowledge", // 博客的标题

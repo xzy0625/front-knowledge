@@ -29,7 +29,7 @@
   ],
   "js_render": true,
   "initialIndexSettings": {
-    "vueDocs": {
+    "front-knowledge": {
       "attributesForFaceting": ["lang"]
     }
   },
