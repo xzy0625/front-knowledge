@@ -72,4 +72,7 @@ export default {
       { icon: "github", link: "https://github.com/xzy0625/front-knowledge" },
     ], // 可以连接到 github
   },
+  vite: {
+    assetsInclude: ['**/*.awebp'],
+  }
 };

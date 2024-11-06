@@ -1,5 +1,5 @@
 // !!!由代码自动生成，无需更改。
- export const sidebar = [
+export const sidebar = [
   {
     "originText": "jsvascript",
     "text": "jsvascript",
