@@ -9,12 +9,14 @@ import webView from './webview';
 import leranItem from './learn';
 import mobileItem from './moboile';
 import otherItem from './ohters';
+import codePart from './codePart'
 
 export const sidebar = [
   jsItem,
   browserItem,
   cssItem,
   performanceItem,
+  codePart,
   nodeItem,
   reduxItem,
   thiking,

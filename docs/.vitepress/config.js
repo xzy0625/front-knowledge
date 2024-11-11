@@ -73,6 +73,6 @@ export default {
     ], // 可以连接到 github
   },
   vite: {
-    assetsInclude: ['**/*.awebp'],
+    assetsInclude: ['**/*.awebp'], // 支持awebp
   }
 };
