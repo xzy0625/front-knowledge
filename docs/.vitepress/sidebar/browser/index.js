@@ -26,6 +26,26 @@ const sidebarItem = {
       ]
     },
     {
+      "originText": "browser",
+      "text": "事件循环",
+      "collapsible": true,
+      "collapsed": true,
+      "items": [
+        {
+          "text": "performance使用",
+          "link": "/blogs/browser/eventLoop/performance使用"
+        },
+        {
+          "text": "dom更新渲染时机",
+          "link": "/blogs/browser/eventLoop/dom更新渲染时机"
+        },
+        {
+          "text": "一段奇怪的代码",
+          "link": "/blogs/browser/eventLoop/一段奇怪的代码"
+        }
+      ]
+    },
+    {
       "text": "event-loop",
       "link": "/blogs/browser/event-loop"
     },

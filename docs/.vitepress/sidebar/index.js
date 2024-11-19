@@ -10,12 +10,14 @@ import leranItem from './learn';
 import mobileItem from './moboile';
 import otherItem from './ohters';
 import codePart from './codePart'
+import project from './project';
 
 export const sidebar = [
   jsItem,
   browserItem,
   cssItem,
   performanceItem,
+  project,
   codePart,
   nodeItem,
   reduxItem,
