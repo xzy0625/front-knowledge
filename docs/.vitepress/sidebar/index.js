@@ -5,12 +5,12 @@ import performanceItem from './performance';
 import nodeItem from './node';
 import reduxItem from './redux';
 import thiking from './thiking';
-import webView from './webview';
 import leranItem from './learn';
 import mobileItem from './moboile';
 import otherItem from './ohters';
 import codePart from './codePart'
 import project from './project';
+import structure from './structure';
 
 export const sidebar = [
   jsItem,
@@ -20,9 +20,9 @@ export const sidebar = [
   project,
   codePart,
   nodeItem,
+  structure,
   reduxItem,
   thiking,
-  webView,
   leranItem,
   mobileItem,
   otherItem

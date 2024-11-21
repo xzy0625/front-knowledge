@@ -30,3 +30,37 @@ const batchRequest = (arr, batchSize = 6) => {
   return results;
 }
 ```
+
+## react中判断元素是否hover
+关键在于使用`onMouseEnter`和`onMouseLeave`
+```js
+import React, { useState } from 'react';
+
+const HoverList = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li
+          key={index}
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(null)}
+          style={{
+            backgroundColor: hoveredIndex === index ? 'lightblue' : 'white',
+            padding: '10px',
+            margin: '5px',
+            border: '1px solid #ccc',
+            cursor: 'pointer',
+          }}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+```
