@@ -11,6 +11,7 @@ import otherItem from './ohters';
 import codePart from './codePart'
 import project from './project';
 import structure from './structure';
+import  algorithm from './algorithm';
 
 export const sidebar = [
   jsItem,
@@ -18,9 +19,10 @@ export const sidebar = [
   cssItem,
   performanceItem,
   project,
+  structure,
+  algorithm,
   codePart,
   nodeItem,
-  structure,
   reduxItem,
   thiking,
   leranItem,

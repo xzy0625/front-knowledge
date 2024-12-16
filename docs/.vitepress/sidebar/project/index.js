@@ -7,6 +7,10 @@ const sidebar = {
     {
       "text": "babel插件",
       "link": "/blogs/project/babel_plugin"
+    },
+    {
+      "text": "前端监控",
+      "link": "/blogs/project/前端监控"
     }
   ]
 };

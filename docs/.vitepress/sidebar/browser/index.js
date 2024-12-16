@@ -49,10 +49,10 @@ const sidebarItem = {
       "text": "event-loop",
       "link": "/blogs/browser/event-loop"
     },
-    {
-      "text": "second",
-      "link": "/blogs/browser/second"
-    },
+    // {
+    //   "text": "second",
+    //   "link": "/blogs/browser/second"
+    // },
     {
       "text": "杂记",
       "link": "/blogs/browser/杂记"

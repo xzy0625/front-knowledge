@@ -9,7 +9,7 @@ const sidebar = {
       "link": "/blogs/performance/first"
     },
     {
-      "text": "index",
+      "text": "大数据渲染",
       "link": "/blogs/performance/index"
     },
     {
