@@ -5,6 +5,10 @@ const sidebar = {
   "collapsed": true,
   "items": [
     {
+      "text": "为什么用rollup进行打包",
+      "link": "/blogs/project/为什么用rollup进行打包"
+    },
+    {
       "text": "babel插件",
       "link": "/blogs/project/babel_plugin"
     },
