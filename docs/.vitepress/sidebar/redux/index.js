@@ -17,6 +17,10 @@ const sidebar = {
       "link": "/blogs/redux/redux使用优化"
     },
     {
+      "text": "redux实现watch",
+      "link": "/blogs/redux/redux实现watch"
+    },
+    {
       "text": "redux原理--杂记",
       "link": "/blogs/redux/redux原理"
     },

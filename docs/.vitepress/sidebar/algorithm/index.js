@@ -24,6 +24,10 @@ const sidebar = {
     {
       "text": "算法框架",
       "link": "/blogs/algorithm/算法框架"
+    },
+    {
+      "text": "经典题目",
+      "link": "/blogs/algorithm/经典题目"
     }
   ]
 };

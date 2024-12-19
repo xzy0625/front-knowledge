@@ -26,6 +26,18 @@ const sidebar = {
       ]
     },
     {
+      "originText": "一些特性",
+      "text": "一些特性",
+      "collapsible": true,
+      "collapsed": true,
+      "items": [
+        {
+          "text": "一些代码实现",
+          "link": "/blogs/jsvascript/一些特性/一些代码实现"
+        }
+      ]
+    },
+    {
       "text": "代码漏洞",
       "link": "/blogs/jsvascript/代码漏洞"
     }
