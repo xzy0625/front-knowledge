@@ -62,6 +62,10 @@ const sidebarItem = {
       "link": "/blogs/browser/浏览器中的线程和进程"
     },
     {
+      "text": "强缓存和协商缓存",
+      "link": "/blogs/browser/强缓存和协商缓存"
+    },
+    {
       "text": "浏览器渲染原理和性能优化",
       "link": "/blogs/browser/浏览器渲染原理和性能优化"
     },

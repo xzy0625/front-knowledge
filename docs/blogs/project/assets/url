@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+<head>
+    <meta name="google" content="notranslate"/>
+    <meta http-equiv="pragram" content="no-cache"/>
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
+    <meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <base href="/"/>
+    <link rel="shortcut icon" href="./assets/public/images/favicon.svg?v=2024">
+    <link rel="stylesheet" type="text/css" href="./assets/public/styles/common.css?v=djMuNDEuMF8zMjhmYjE3MDg3OTI5MDIzZmFkY2Y2NTFjNDE4ZDNlMGQ0MGM0Mzlm">
+    <link rel="stylesheet" type="text/css" href="./assets/public/styles/RIO_style.css?v=djMuNDEuMF8zMjhmYjE3MDg3OTI5MDIzZmFkY2Y2NTFjNDE4ZDNlMGQ0MGM0Mzlm">
+    <link rel="stylesheet" type="text/css" href="./assets/public/styles/login.2016.css?v=djMuNDEuMF8zMjhmYjE3MDg3OTI5MDIzZmFkY2Y2NTFjNDE4ZDNlMGQ0MGM0Mzlm">
+    <link rel="stylesheet" type="text/css" href="./assets/public/styles/tfa.css?v=djMuNDEuMF8zMjhmYjE3MDg3OTI5MDIzZmFkY2Y2NTFjNDE4ZDNlMGQ0MGM0Mzlm">
+    
+    <title>OA登录</title>
+    <script type="text/javascript">
+        var pageCfg = {
+            loginMethod:  7 ,
+            captchaAppId: "2050147878",
+            isShowCaptcha:  false ,
+            maxFailedAttempt:  3 ,
+            error:  null ,
+            smsGuid:  null ,
+            accountName:  null ,
+            deviceType: "DeviceComputer",
+            isInternetLogin:  false ,
+            MOALoginApp: "",
+            IsSensitive:  true ,
+            IsInternetLogin:  false ,
+            IsEnableOutlook2FA:  true ,
+            MOALoginUrl: "",
+            QRCodeHandler: ".",
+            QueryString: "appkey=ngn\u0026oauth=true\u0026state=ngn_tof4auth\u0026url=https%3A%2F%2Fiwiki.woa.com%2F_auth_login%2F%3Furl%3Dhttps%253A%252F%252Fiwiki.woa.com%252Ftencent%252Fapi%252Fattachments%252Fs3%252Furl%253Fattachmentid%253D16147788%26app_name%3Dunknown",
+            WebPollInterval:  1000 ,
+            LongPollingTimeout:  60 ,
+            ShowQRCode:  true ,
+            IsSecondStepLogin:  false ,
+            SessionId:  null ,
+            RefreshOnPageResume:  true ,
+        };
+
+        if (pageCfg.deviceType == 'DevicePhone') {
+            document.documentElement.classList.add("is-mobile");
+        }
+    </script>
+    
+
+    <script type="text/javascript" src="./assets/public/js/vue.min.js"></script>
+    <script type="text/javascript" src="./assets/public/js/vue-i18n.min.js"></script>
+    <script type="text/javascript" src="./assets/public/js/locales.js?v=djMuNDEuMF8zMjhmYjE3MDg3OTI5MDIzZmFkY2Y2NTFjNDE4ZDNlMGQ0MGM0Mzlm"></script>
+    <script type="text/javascript">function IEVersion() {
+        var userAgent = navigator.userAgent; 
+        var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; 
+        var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; 
+        var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+        if(isIE) {
+            var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+            reIE.test(userAgent);
+            var fIEVersion = parseFloat(RegExp["$1"]);
+            if(fIEVersion == 7) {
+                return 7;
+            } else if(fIEVersion == 8) {
+                return 8;
+            } else if(fIEVersion == 9) {
+                return 9;
+            } else if(fIEVersion == 10) {
+                return 10;
+            } else {
+                return 6;
+            }
+        } else if(isEdge) {
+            return 'edge';
+        } else if(isIE11) {
+            return 11; 
+        }else{
+            return -1;
+        }
+      }
+      var ie = IEVersion();
+      if (ie>0 && ie < 10) {
+        alert('系统检测到您的浏览器版本过低，影响使用体验，推荐使用IE11以上、Chrome、QQ浏览器以获得最佳体验')
+      }
+
+      function wrapStorage(storageName) {
+            var store = {};
+            ['getItem', 'setItem', 'removeItem', 'clear'].forEach(function (key) {
+                store[key] = function () {
+                    try {
+                        return window[storageName][key].apply(window[storageName], arguments);
+                    } catch (err) {
+                        console.log(storageName + '.' + key + ' failed:', err);
+                    }
+                    return undefined;
+                }
+            })
+            return store;
+        }
+        var Storage = {
+            sessionStorage: wrapStorage('sessionStorage'),
+            localStorage: wrapStorage('localStorage'),
+        };
+        Vue.filter('xss', function(input){
+           return input
+                
+                .replace(/<(?!\/?a).*?>/g, '')
+                
+                .replace(/\son\w+=[^\s>]+/g, '')
+        })
+    </script>
+</head>
+<body>
+<noscript><strong>很抱歉，网站不能正常加载，请启用JavaScript后继续。</strong></noscript>
+<div id="app">
+    <div class="layout">
+        
+        
+        
+        
+        
+        <div class="banner_wrap" v-cloak  v-if="!isMobile && !isInternetLogin">
+            
+                <div class="rtx_top">
+                    <div class="rtx_top_banner">
+                        <a><img src="./assets/public/images/top_banner.jpg" alt=""/></a>
+                    </div>
+                </div>
+            
+        </div>
+
+        
+          
+          <div class="TDesign-theme-tabs">
+            <div class="TDesign-theme-tabs__block"></div>
+            <div data-theme="light" class="item sun active">
+              <svg width="20" height="20" viewBox="0 0 20 20">
+                <use xlink:href="#icon-sun"></use>
+              </svg> 
+            </div>
+            <div data-theme="dark" class="item moon ">
+              <svg width="20" height="20" viewBox="0 0 20 20">
+                <use xlink:href="#icon-moon"></use>
+              </svg> 
+            </div>
+          </div>
+        
+
+        
+    
+
+    
+    
+        <div v-cloak v-if="isShowNotice" class="notice-box">
+            <div class="notice-body" style="max-width: 710px;background: #F2F7FF; border-color: #F2F7FF; border-radius: 6px;">
+              <svg class="notice-icon" viewBox="0 0 20 20" width="20" height="20">
+                <use xlink:href="#icon-notice"></use>
+              </svg>
+              
+              <span class="tip-msg" v-html="lang === 'zh' ? '为什么无法快速登录？&lt;a href=&#34;/no-quick-login-by-sec-level?tip=%E8%AF%A5%E5%BA%94%E7%94%A8Typora%E4%B8%8D%E5%9C%A8%E6%8E%88%E4%BF%A1%E6%B8%85%E5%8D%95%E5%86%85%EF%BC%8C%E7%BB%8F%E7%94%B3%E8%AF%B7%E6%8E%88%E4%BF%A1%E5%90%8E%E5%8F%AF%E4%BD%BF%E7%94%A8%E5%BF%AB%E9%80%9F%E7%99%BB%E5%BD%95%EF%BC%8C%3Ca&#43;href%3D%22https%3A%2F%2Fopensoc.woa.com%2Fpage%2FconfigApproval%2Fquick-login-process%3FpageId%3D150%23%2F%22%3E%E7%94%B3%E8%AF%B7%E9%93%BE%E6%8E%A5%3C%2Fa%3E%E3%80%82%E5%A6%82%E6%9C%89%E7%96%91%E9%97%AE%EF%BC%8C%E8%AF%B7%E8%81%94%E7%B3%BBIT%E5%AE%89%E5%85%A8%E5%8A%A9%E6%89%8B%E3%80%82&amp;tipEn=The&#43;application&#43;Typora&#43;is&#43;not&#43;in&#43;the&#43;trusted&#43;list.&#43;You&#43;can&#43;use&#43;quick&#43;login&#43;after&#43;applying&#43;for&#43;trust.&#43;&#43;%3Ca&#43;href%3D%22https%3A%2F%2Fopensoc.woa.com%2Fpage%2FconfigApproval%2Fquick-login-process%3FpageId%3D150%23%2F%22%3EHere&#43;is&#43;the&#43;application&#43;link%3C%2Fa%3E.&#43;If&#43;you&#43;have&#43;any&#43;questions%2C&#43;please&#43;contact&#43;the&#43;IT&#43;Security&#43;Assistant.&#34; target=&#34;_blank&#34; style=&#34;text-decoration:underline&#34;&gt;查看详情&lt;/a&gt;' : 'Why can\&#39;t I use Quick Login? &lt;a href=&#34;/no-quick-login-by-sec-level?tip=%E8%AF%A5%E5%BA%94%E7%94%A8Typora%E4%B8%8D%E5%9C%A8%E6%8E%88%E4%BF%A1%E6%B8%85%E5%8D%95%E5%86%85%EF%BC%8C%E7%BB%8F%E7%94%B3%E8%AF%B7%E6%8E%88%E4%BF%A1%E5%90%8E%E5%8F%AF%E4%BD%BF%E7%94%A8%E5%BF%AB%E9%80%9F%E7%99%BB%E5%BD%95%EF%BC%8C%3Ca&#43;href%3D%22https%3A%2F%2Fopensoc.woa.com%2Fpage%2FconfigApproval%2Fquick-login-process%3FpageId%3D150%23%2F%22%3E%E7%94%B3%E8%AF%B7%E9%93%BE%E6%8E%A5%3C%2Fa%3E%E3%80%82%E5%A6%82%E6%9C%89%E7%96%91%E9%97%AE%EF%BC%8C%E8%AF%B7%E8%81%94%E7%B3%BBIT%E5%AE%89%E5%85%A8%E5%8A%A9%E6%89%8B%E3%80%82&amp;tipEn=The&#43;application&#43;Typora&#43;is&#43;not&#43;in&#43;the&#43;trusted&#43;list.&#43;You&#43;can&#43;use&#43;quick&#43;login&#43;after&#43;applying&#43;for&#43;trust.&#43;&#43;%3Ca&#43;href%3D%22https%3A%2F%2Fopensoc.woa.com%2Fpage%2FconfigApproval%2Fquick-login-process%3FpageId%3D150%23%2F%22%3EHere&#43;is&#43;the&#43;application&#43;link%3C%2Fa%3E.&#43;If&#43;you&#43;have&#43;any&#43;questions%2C&#43;please&#43;contact&#43;the&#43;IT&#43;Security&#43;Assistant.&#34; target=&#34;_blank&#34; style=&#34;text-decoration:underline&#34;&gt;More information&lt;/a&gt;' || '为什么无法快速登录？&lt;a href=&#34;/no-quick-login-by-sec-level?tip=%E8%AF%A5%E5%BA%94%E7%94%A8Typora%E4%B8%8D%E5%9C%A8%E6%8E%88%E4%BF%A1%E6%B8%85%E5%8D%95%E5%86%85%EF%BC%8C%E7%BB%8F%E7%94%B3%E8%AF%B7%E6%8E%88%E4%BF%A1%E5%90%8E%E5%8F%AF%E4%BD%BF%E7%94%A8%E5%BF%AB%E9%80%9F%E7%99%BB%E5%BD%95%EF%BC%8C%3Ca&#43;href%3D%22https%3A%2F%2Fopensoc.woa.com%2Fpage%2FconfigApproval%2Fquick-login-process%3FpageId%3D150%23%2F%22%3E%E7%94%B3%E8%AF%B7%E9%93%BE%E6%8E%A5%3C%2Fa%3E%E3%80%82%E5%A6%82%E6%9C%89%E7%96%91%E9%97%AE%EF%BC%8C%E8%AF%B7%E8%81%94%E7%B3%BBIT%E5%AE%89%E5%85%A8%E5%8A%A9%E6%89%8B%E3%80%82&amp;tipEn=The&#43;application&#43;Typora&#43;is&#43;not&#43;in&#43;the&#43;trusted&#43;list.&#43;You&#43;can&#43;use&#43;quick&#43;login&#43;after&#43;applying&#43;for&#43;trust.&#43;&#43;%3Ca&#43;href%3D%22https%3A%2F%2Fopensoc.woa.com%2Fpage%2FconfigApproval%2Fquick-login-process%3FpageId%3D150%23%2F%22%3EHere&#43;is&#43;the&#43;application&#43;link%3C%2Fa%3E.&#43;If&#43;you&#43;have&#43;any&#43;questions%2C&#43;please&#43;contact&#43;the&#43;IT&#43;Security&#43;Assistant.&#34; target=&#34;_blank&#34; style=&#34;text-decoration:underline&#34;&gt;查看详情&lt;/a&gt;'"></span>
+              
+              <svg @click="isShowNotice = false" class="notice-icon notice-icon-close">
+                <use xlink:href="#icon-close"></use>
+              </svg>
+            </div>
+        </div>
+    
+
+<div class="login_wrap" v-cloak>
+    <div class="login_title">
+        <h1 class="title">
+            Tencent 腾讯 企业门户
+            <img src="./assets/public/images/tencent.svg" alt="Tencent 腾讯 企业门户" />
+        </h1>
+        <div :class="['dropdown', 'locale-changer', { active: isShowDropdown }]">
+          <button @click="showDropdown" class="dropbtn darkmode-ignore" style="color: #000; background: #fff">
+            <svg class="icon-lang" width="18" height="18">
+              <use xlink:href="#icon-lang"></use>
+            </svg>
+            [[lang === 'zh' ? '简体中文' : 'English']]
+            <svg class="icon-dropdown" width="12" height="12">
+              <use xlink:href="#icon-dropdown"></use>
+            </svg>
+          </button>
+          <div id="myDropdown" class="dropdown-content" v-if="isShowDropdown">
+            <span @click="toggleLang('zh')" :class="{active: lang ==='zh'}">简体中文</span>
+            <span @click="toggleLang('en')" :class="{active: lang === 'en'}">English</span>
+          </div>
+        </div>
+    </div>
+    <br/>
+    
+    
+        <div class="login_quick" id="div_logintypeselect">
+            
+            <a :class="{quickLogin: true, selected:  loginMethod === 7}" style="display: inline-block;" id="link_ioalogin" @click="toggleLoginMethod(7)">
+                [[$t('手机 iOA(MOA)')]]
+            </a>
+            
+            <div class="seperator-line">/</div>
+            <a :class="{accountLogin: true, selected:  (loginMethod !== 5 && loginMethod!==7)}" style="display: inline-block" @click="toggleLoginMethod(3)">
+                [[$t('账号密码')]]
+            </a>
+        </div>
+    
+    <form id="login-form" action="./modules/passport/signin.ashx?appkey=ngn&amp;oauth=true&amp;state=ngn_tof4auth&amp;url=https%3A%2F%2Fiwiki.woa.com%2F_auth_login%2F%3Furl%3Dhttps%253A%252F%252Fiwiki.woa.com%252Ftencent%252Fapi%252Fattachments%252Fs3%252Furl%253Fattachmentid%253D16147788%26app_name%3Dunknown" method="POST">
+        <input type="hidden" id="crypto_pk" value="LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBd2NESmR3ejREWkcyUWVQcmNwSk8KaW1rMmRzVXlGcm55a2hCWWlhaWM4ZVhYYVV5aFNodk9ZNzE1NzR0ZnZTN2FnY1ArTTRqOHlmdGU0RGx6NGgxeApsTlBxdDg0WjQvZ2pWVGljVS9odVd4MlI4QkUweGRSajB3Mkg1VFdQZnI1OWtrVzAvRmwxVVZtbXdnenNWaFYxCjJ1dzFUSnZIdzhSVVBGQkxqd2JsSkZpeEFBUEVmNzloS205Vy8yVE5SQnhRZExYTzRUays3MzlXdWpXaUNTc3IKblVkQzlxb1ZuejlOYnN2UG9ueVRwcUdkcTJZSW50KzZnaG8zOHVqa2ZRRmlFOERyYzZtZ05ReWFMTVp3UzdvUwoxZWJCU29uVktrRFF2ckhtTXBSUlg3ZWxRb1E1OVU0YWRaZkZaVHZQL2ZFWmRmbUl3UWZiZjR5RXlVTkVOZjZDCnp3SURBUUFCCi0tLS0tRU5EIFJTQSBQVUJMSUMgS0VZLS0tLS0K"/>
+        <input type="hidden" id="rsa_pk" value=""/>
+        <input id="crypto_em" name="crypto_em" type="hidden" value="0"/>
+        <input id="login_method" name="login_method" type="hidden" v-model="loginMethod"/>
+        <input id="qrcode_uid" name="qrcode_uid" type="hidden" value="TOF4~eyJpZCI6ImN0cXZyaGMxZGZpb3FobDczMnBnIiwiaXNzIjoiMTAuODguMTY3LjciLCJzaWduYXR1cmUiOiJjYjcwM2QwZWJmZTY2MDYxMjAzMmFhMmM5NjBjYTNmYjJmNjYwOTczZWQyMWNiYzMwZWUyYzExNzI2ODk1NjY3In0"/>
+        <input id="qrcode_content" name="qrcode_content" type="hidden" value="https://qr.oa.tencent.com/login?uid=TOF4~eyJpZCI6ImN0cXZyaGMxZGZpb3FobDczMnBnIiwiaXNzIjoiMTAuODguMTY3LjciLCJzaWduYXR1cmUiOiJjYjcwM2QwZWJmZTY2MDYxMjAzMmFhMmM5NjBjYTNmYjJmNjYwOTczZWQyMWNiYzMwZWUyYzExNzI2ODk1NjY3In0%26host=iwiki.woa.com"/>
+        <input id="challenge" name="challenge" type="hidden" value=""/>
+        <input id="lang" name="lang" type="hidden" v-model="lang"/>
+        
+        <div class="login_area_outer login_con_normal" v-show="loginMethod !== 5 && loginMethod !== 7">
+            <div class="login_form">
+                <div class="log_main">
+
+                   <div class="login-wrap" v-if="loginMethod === 2">
+                        
+                        <div class="log_ui logTool">
+                            <div class="dsib log_tool_outer vm">
+                                <input class="txt username vm" type="hidden" id="userNameInp_encrypted" v-model="accountName"
+                                    name="account_name"/>
+                                <input class="txt username vm" type="text" id="userNameInp" :placeholder="$t('英文 ID')"
+                                    v-model="accountName" tabindex="1"/>
+                            </div>
+                        </div>
+                        
+                        <div class="log_ui logPass">
+                            <div class="dsib log_tool_outer vm">
+                                <label class="txt_default" for="upass" id="label_upass"
+                                    default_txt="请输入您的密码"></label>
+                                <input class="txt userPass" type="hidden" id="passWordInp_encrypted"
+                                    name="password"/>
+                                <input class="txt userPass" type="password" id="passWordInp"
+                                    value=""
+                                    :placeholder="$t('Outlook 密码')"
+                                    tabindex="2"/>
+                            </div>
+                        </div>
+                   </div>
+
+                   <div class="login-wrap" v-if="loginMethod === 3">
+                        
+                        <div class="log_ui logTool">
+                            <div class="dsib log_tool_outer vm">
+                                <input class="txt username vm" type="hidden" id="userNameInp_encrypted" v-model="accountName"
+                                    name="account_name"/>
+                                <input class="txt username vm" type="text" id="userNameInp" :placeholder="$t('英文 ID')"
+                                    v-model="accountName"  tabindex="1"/>
+                            </div>
+                        </div>
+                        
+                        <div class="log_ui logPass">
+                            <div class="dsib log_tool_outer vm">
+                                <label class="txt_default" for="upass" id="label_upass"
+                                    default_txt="请输入您的密码"></label>
+                                <input class="txt userPass" type="hidden" id="passWordInp_encrypted"
+                                    name="password"/>
+                                <input class="txt userPass" type="password" id="passWordInp"
+                                    value=""
+                                    placeholder="PIN + TOKEN"
+                                    tabindex="2"/>
+                            </div>
+                        </div>
+                   </div>
+
+                   <div class="login-wrap" v-if="loginMethod === 6">
+                        
+                        <div class="log_ui logTool">
+                            <div class="dsib log_tool_outer vm">
+                                <input class="txt username vm" type="hidden" id="userNameInp_encrypted" v-model="accountName"
+                                    name="account_name"/>
+                                <input class="txt username vm" type="text" id="userNameInp" :placeholder="$t('英文 ID')"
+                                v-model="accountName" tabindex="1"/>
+                            </div>
+                        </div>
+                        
+                        <div class="log_ui logPass">
+                            <div class="dsib log_tool_outer vm">
+                                <label class="txt_default" for="upass" id="label_upass"
+                                    default_txt="请输入您的密码"></label>
+                                <input class="txt userPass" type="hidden" id="passWordInp_encrypted"
+                                    name="password"/>
+                                <input class="txt userPass" type="password" id="passWordInp"
+                                    value=""
+                                    :placeholder="$t('Outlook 密码')"
+                                    tabindex="2"/>
+                            </div>
+                        </div>
+
+                        <div class="sms-wrap">
+                            <div class="log_ui logSms">
+                                <div class="dsib log_tool_outer vm">
+                                    <input id="sms-guid" type="hidden" maxlength="6" name="sms_guid" value=""/>
+                                    <input class="sms-input txt" id="sms-input" type="tel" maxlength="6" :placeholder="$t('短信验证码')" name="sms" autocomplete="off"/>
+                                    <button v-if="!isSending && !remains" class="sms-btn" @click.prevent="handleSendSms">[[$t('获取验证码')]]</button>
+                                    <button v-else class="sms-btn" disabled>[[isSending ? $t('发送中') + '...' : $t('重新获取') + ' (' + remains + 's)']]</button>
+                                    <div class="sms-tip">
+                                        <img class="icon-tip" alt="icon" src="./assets/public/images/question.svg" />
+                                        <div class="sms-tip-content">
+                                            1.[[$t('短信验证码将发送至员工绑定的手机号及企业微信。')]]<br>
+                                            2.[[$t('若未收到短信验证码，请检查手机号，或使用其他方式登录。')]]
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       <div v-if="isSmsSent" style="font-size: 13px">[[$t('短信验证码已发送至尾号为')+ smsReceiver +$t('的手机号码，请注意查收')]]</div>
+                    </div>
+
+                    <div class="append_op dsib">
+                        <div class="dsib autoLogSet" id="errtip" style="color: #d93025;">[[$t('')]]</div>
+                    </div>
+
+                    <div class="logBtnOuter">
+                        <button type="submit" id="logBtn" class="logBtn logNewVer" onclick=''>[[$t('登录')]]</button>
+                    </div>
+
+                    
+
+                    <div class="login_outlook">
+                        <div v-show="loginMethod !== 3" class="link" @click="toggleLoginMethod(3)">
+                            <i class="icon icon_switch"></i>[[$t('切换至 Pin+Token 验证')]]
+                        </div>
+                        <div v-show=" true && loginMethod !==6" class="link" @click="toggleLoginMethod(6)">
+                            <i class="icon icon_switch"></i>[[$t('切换至短信验证码验证')]]
+                        </div>
+                        <div v-show="true && loginMethod !== 2 && true" class="link" @click="toggleLoginMethod(2)">
+                            <i class="icon icon_switch"></i>[[$t('切换至 Outlook 密码验证')]]
+                        </div>
+                    </div>
+                    <div class="newVerProBottom"></div>
+
+                    <div class="quick-login-wrap" v-if="isMobile && isEnableMOA">
+                        <div class="line">or</div>
+                        <a @click="oneKeyLogin"
+                            id="link_moaLogin">
+                            [[$t(isWechat ? '一键登录' : '快速登录')]]
+                        </a>
+                        <p v-if="!isWechat" class="moa-hint">[[$t('该登录方式需先下载手机 iOA(MOA)')]]</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="v_line">
+            </div>
+            <div class="login_qr_code">
+                <div>
+                    <div class="qrcode_image">
+                        <img id="qrcode_image" class="qr_img" alt=""/>
+
+                        <div class="scan_success_area">
+                            <i class="icon_success"></i>
+                            <span class="txt">[[$t('扫描成功')]]</span>
+                        </div>
+                        <div class="scan_alert_area" onclick="restartQRcode()">
+                            <i class="icon_alert"></i>
+                            <span class="txt">[[$t('二维码失效')]]<br>[[$t('点击刷新')]]</span>
+                        </div>
+                    </div>
+
+                    <i18n path="qrTips" tag="p" class="qr_tips">
+                        
+                        <a href="https://work.weixin.qq.com/" target="_blank" class="tips">[[$t('企业微信 2.4')]]</a>
+                        <span >[[$t('或')]]</span>
+                        
+                        <a href="https://moa.tencent.com" target="_blank" class="tips">[[$t('手机 iOA(MOA) 3.2以上版本')]]</a>
+                    </i18n>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="login_con_show quick_login">
+            <div class="login_con login_con_authorize clearfix">
+                  <div class="login_normal" style="padding: 56px 30px;">
+                        <a href="javascript:void(0);" class="qrcode_back" onclick="handleReturn();return false;">
+                          <svg width="18" height="18">
+                            <use xlink:href="#icon-back"></use>
+                          </svg>
+                          [[$t('返回')]]
+                        </a>
+
+                        <h2 class="scan-source-title for-moa">[[$t('请在手机 iOA(MOA) 确认登录')]]</h2>
+                        <h2 class="scan-source-title for-qywx">[[$t('请在企业微信确认登录')]]</h2>
+
+                        <div style="min-height:120px;position:relative;">
+                            <div class="login_authorize" v-show="!moaLogin.isSent && !moaLogin.isFinish">
+                                  <div class="card-box">
+                                    <img id="user_image" class="card-box-icon" alt="头像" src="./login-avatar?user=lebronxiong" onerror="javascript:this.src='/assets/public/images/defaultUserImage.png'"/>
+                                    <div class="card-box-title" id="user_name">lebronxiong</div>
+                                  </div>
+
+                                  <svg class="connect-line" style="align-self: center;" width="58" height="2">
+                                    <use xlink:href="#icon-connect-line"></use>
+                                  </svg> 
+
+                                  <svg class="icon-mobile-moa for-moa darkmode-ignore" style="width:34px;height:68px;align-self:center;">
+                                    <use xlink:href="#icon-mobile-moa"></use>
+                                  </svg> 
+
+                                  <svg class="icon-mobile-qywx for-qywx darkmode-ignore" style="width:34px;height:68px;align-self:center;">
+                                    <use xlink:href="#icon-mobile-qywx"></use>
+                                  </svg> 
+
+                                  <svg class="connect-line" style="align-self: center;" width="58" height="2">
+                                    <use xlink:href="#icon-connect-line"></use>
+                                  </svg> 
+
+                                  <div class="card-box">
+                                      <img src="./assets/public/images/icon-tencent.png" alt="tencent" style="width:48px;height:48px;margin-bottom:10px;"/>
+                                      <div class="card-box-title" style="line-height:1;">[[$t('公司内部系统')]]</div>
+                                    </div>
+                              </div>
+                          </div>
+                    </div>
+              </div>
+        </div>
+
+
+        
+
+        
+            <div class="login_con_show quick_login" id="div_moalogin" v-show="loginMethod === 7">
+                <div class="login_con login_con_normal clearfix">
+                    <div class="login_normal">
+                        <h2 style="font-style: normal; font-weight: 600; font-size: 18px; line-height: 26px; margin-bottom: 40px;">[[$t('请在手机 iOA(MOA) 确认登录')]]</h2>
+
+                        <div style="min-height:120px;position:relative;">
+                          <div class="login_authorize" v-show="!moaLogin.isSent && !moaLogin.isFinish">
+                              <div class="card-box">
+                                  <img id="ioa_userimage" class="card-box-icon" alt="头像" src="./login-avatar?user=lebronxiong" onerror="javascript:this.src='/assets/public/images/defaultUserImage.png'"/>
+                                  <div class="card-box-title">lebronxiong</div>
+                              </div>
+                              <svg class="connect-line" style="align-self: center;" width="58" height="2">
+                                <use xlink:href="#icon-connect-line"></use>
+                              </svg>
+                              <div class="card-box">
+                                  <svg width="48" height="48" viewBox="0 0 48 48" style="margin-bottom: 10px;">
+                                    <use xlink:href="#icon-moa"></use>
+                                  </svg>
+                                  <div class="card-box-title">iOA(MOA)</div>
+                              </div>
+                          </div>
+
+                          <transition name="fade">
+                            <div class="moa-landing" v-show="moaLogin.isSent || moaLogin.isFinish" style="position:absolute;width:100%;top:0;height:200px;margin-top:-10px;margin-bottom:-80px;">
+                              <img width="127" height="127" src="./assets/public/images/moa.gif" style="position:relative; z-index:1; margin:auto;"/>
+                              <svg
+                                style="width: 590px; position: absolute; left: 50%; margin-left: -295px; top: 90px"
+                              >
+                                <use xlink:href="#icon-curve"></use>
+                              </svg>
+                            </div>
+                          </transition>
+                        </div>
+
+                        <div style="position: relative;">
+                          <div class="append_op dsib">
+                              <div class="dsib autoLogSet" style="color: #d93025;margin-top: 10px">[[$t('')]]</div>
+                          </div>
+                          <div class="btn_wrap" style="margin-top: 30px;">
+                            <button class="tfa-button" v-if="!moaLogin.isSending && !moaLogin.remains" @click.prevent="requestMoaLogin"
+                              :disabled="moaLogin.isChecking || moaLogin.isFinish">
+                              [[moaLogin.isSent ? $t('重新发送') : $t('发起验证')]]
+                            </button>
+                            <button v-else class="tfa-button" disabled>
+                              [[moaLogin.isSending ? $t('发送中') + '...' : $t('重新发送') + ' (' + moaLogin.remains + 's)']]
+                            </button>
+                          </div>
+                          <div class="tfa-msg" style="color: rgb(217, 48, 37)" v-if="moaLogin.errMsg">
+                            [[$t(moaLogin.errMsg)]]
+                          </div>
+
+                          <div v-else>
+                              <div v-if="moaLogin.isSent && !moaLogin.isFinish">
+                                <p style="margin-top: 16px; text-align: center; font-size: 14px; color: rgba(0,0,0,0.5);">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" style="margin-right: 4px; flex: 0 0 16px; width: 16px; vertical-align: text-bottom">
+                                      <use xlink:href="#icon-info"></use>
+                                    </svg>
+                                    [[$t('若手机 iOA(MOA) 未出现弹窗，请尝试：关闭手机 iOA(MOA) 后重新打开')]]</p>
+                              </div>
+                          </div>
+                          <div class="tfa-msg" v-if="moaLogin.isFinish" style="color: #0052D9;">
+                            <span class="success-icon"></span> [[$t('验证成功，登录中...')]]
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </form>
+    
+</div>
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0">
+  <symbol
+    id="icon-tx-logo"
+    width="358px"
+    height="48px"
+    viewBox="0 0 358 48"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <polygon
+        id="path-1"
+        points="0.538683871 0.0096 45.899444 0.0096 45.899444 48 0.538683871 48"
+      ></polygon>
+    </defs>
+    <g id="移动端登录2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="中文token密码登录" transform="translate(-195.000000, -260.000000)">
+        <g id="tencent" transform="translate(195.000000, 260.000000)">
+          <polygon
+            id="Fill-1"
+            fill="#0052D9"
+            points="232.620155 14.904929 221.801574 14.904929 226.056542 21.0071226 231.541703 21.0071226 226.931381 47.264671 236.5368 47.264671 241.156413 21.0071226 253.137832 21.0071226 234.220413 5.79034839"
+          ></polygon>
+          <polygon
+            id="Fill-2"
+            fill="#0052D9"
+            points="1.19357419 0.000232258065 -0.000232258065 6.87429677 16.9468645 6.87429677 9.84750968 47.2647484 19.4552516 47.2647484 26.5561548 6.87429677 43.6503484 6.87429677 44.8418323 0.000232258065"
+          ></polygon>
+          <g id="编组" transform="translate(29.419355, 0.000310)">
+            <path
+              d="M27.5074065,27.6445161 L10.7987613,27.6445161 C11.8013419,24.3348387 15.0490839,19.7593548 20.9592774,19.7593548 C27.3912774,19.7593548 28.0702452,24.6491613 27.5074065,27.6445161 M22.5277935,14.1774194 C10.3156645,14.1774194 2.49863226,21.8636129 0.9456,30.7916129 C-0.772335484,40.7082581 5.31979355,47.9655484 17.6418581,47.9655484 C23.1502452,47.9655484 28.3025032,46.9312258 32.4877935,44.6047742 L33.7884387,37.2096774 C29.6983742,40.1369032 24.4957935,41.7766452 20.0852129,41.7766452 C13.9427613,41.7766452 9.05682581,39.2171613 9.8256,33.3487742 L35.2129548,33.3487742 C35.5195355,32.6543226 35.885729,31.4326452 36.1528258,29.9113548 C37.3822452,22.8243871 34.8692129,14.1774194 22.5277935,14.1774194"
+              id="Fill-3"
+              fill="#0052D9"
+            ></path>
+            <path
+              d="M64.9590194,14.177729 C58.9613419,14.177729 54.4717935,16.6644387 52.3551484,19.1751484 L52.1306323,19.1751484 L43.6725677,14.177729 C43.3621161,16.9818581 42.9448258,20.7885677 42.2952774,24.5279226 L38.3484387,47.2636645 L47.9530839,47.2636645 L51.2945032,28.2231484 C51.4570839,27.2902452 51.7729548,26.2969548 52.1856,25.6272774 C53.6209548,23.1281806 56.6317935,20.8280516 60.4477935,20.8280516 C65.693729,20.8280516 67.1197935,24.3630194 66.3146323,29.0035355 L63.1032774,47.2636645 L72.7110194,47.2636645 L76.0919226,28.0443097 C77.8702452,17.809471 71.5783742,14.177729 64.9590194,14.177729"
+              id="Fill-5"
+              fill="#0052D9"
+            ></path>
+            <path
+              d="M180.212516,14.177729 C174.214065,14.177729 169.72529,16.6644387 167.608645,19.1751484 L167.384903,19.1751484 L158.927613,14.177729 C158.615613,16.9818581 158.197548,20.7885677 157.547226,24.5279226 L153.601935,47.2636645 L163.205032,47.2636645 L166.548774,28.2231484 C166.707484,27.2902452 167.026452,26.2969548 167.436,25.6272774 C168.873677,23.1281806 171.884516,20.8280516 175.70129,20.8280516 C180.949548,20.8280516 182.372516,24.3630194 181.567355,29.0035355 L178.359097,47.2636645 L187.96529,47.2636645 L191.344645,28.0443097 C193.122194,17.809471 186.831871,14.177729 180.212516,14.177729"
+              id="Fill-7"
+              fill="#0052D9"
+            ></path>
+            <path
+              d="M142.762452,27.6445161 L126.053032,27.6445161 C127.057161,24.3348387 130.303355,19.7593548 136.209677,19.7593548 C142.644,19.7593548 143.323742,24.6491613 142.762452,27.6445161 M137.780516,14.1774194 C125.569935,14.1774194 117.752129,21.8636129 116.199871,30.7916129 C114.480387,40.7082581 120.57329,47.9655484 132.896903,47.9655484 C138.402194,47.9655484 143.556,46.9312258 147.742839,44.6047742 L149.041161,37.2096774 C144.952645,40.1369032 139.750065,41.7766452 135.337161,41.7766452 C129.197806,41.7766452 124.316516,39.2171613 125.079871,33.3487742 L150.471871,33.3487742 C150.773806,32.6543226 151.140774,31.4326452 151.409419,29.9113548 C152.636516,22.8243871 150.121161,14.1774194 137.780516,14.1774194"
+              id="Fill-9"
+              fill="#0052D9"
+            ></path>
+            <path
+              d="M80.1246194,30.6490065 C78.3826839,40.6918452 85.4154581,47.9599742 97.3179097,47.9599742 C102.049781,47.9599742 107.702942,46.6020387 109.841265,45.8061677 L111.396619,37.1584258 C108.057523,40.7468129 103.530813,41.4931355 100.323329,41.4931355 C93.7837161,41.4931355 88.8335226,37.6864258 89.9839742,31.0515871 C90.9857806,25.1197161 96.603329,20.5620387 103.924877,20.5620387 C106.909394,20.5620387 110.953781,21.5607484 113.505523,24.9176516 L114.995071,16.1197161 C112.930297,15.3284903 109.622168,14.195071 104.724619,14.195071 C91.371329,14.195071 81.8084903,20.9622968 80.1246194,30.6490065"
+              id="Fill-11"
+              fill="#0052D9"
+            ></path>
+            <path
+              d="M267.394761,21.7843355 C266.485084,20.7678194 265.521987,19.1094968 264.9336,17.9311742 L262.954761,17.9311742 C261.884826,19.2697548 260.279923,20.7678194 258.888697,21.7843355 L267.394761,21.7843355 Z M265.415148,25.7969806 L253.699277,25.7969806 L257.2296,27.4018839 L256.587794,30.6109161 L264.345987,30.6109161 L265.415148,25.7969806 Z M270.980052,25.0475613 L269.749084,30.6109161 L272.371277,30.6109161 C274.135665,30.6109161 275.420052,30.9864 275.098761,33.1796903 C274.510374,37.1389161 273.441213,42.6496258 272.584181,47.3040774 L258.352955,47.3040774 L257.176955,43.0777548 L267.662632,43.0777548 C268.144955,40.8310452 268.733342,38.1020129 269.053858,35.8553032 C269.160697,35.1058839 268.839406,34.8380129 268.089987,34.8380129 L250.327665,34.8380129 L251.933342,26.2243355 C250.648955,26.8134968 248.723535,27.4553032 246.851535,27.8300129 L247.974116,22.6398194 C251.290761,21.8369806 254.662374,20.2328516 256.748052,17.9311742 L248.830374,17.9311742 L249.739277,13.8651097 L259.531277,13.8651097 C260.065471,13.1172387 260.4936,12.1541419 260.707277,11.4589161 L250.114761,11.4589161 L250.9176,7.23259355 L254.715019,7.23259355 L253.323794,0.972464516 L258.728439,0.972464516 L260.011277,7.23259355 L261.884826,7.23259355 C262.473213,5.14536774 262.900568,2.36369032 262.954761,0.0620129032 L268.465471,0.0620129032 C268.357858,2.36369032 268.036568,5.09117419 267.502374,7.23259355 L269.695665,7.23259355 C270.551148,5.3064 271.408181,3.00549677 272.102632,0.972464516 L277.613342,0.972464516 C276.863923,2.89788387 275.9016,5.25220645 274.991923,7.23259355 L278.843535,7.23259355 L277.828568,11.4589161 L266.324826,11.4589161 C266.111148,12.1541419 265.683019,13.1706581 265.309084,13.8651097 L279.433471,13.8651097 L278.470374,17.9311742 L270.229858,17.9311742 C271.995794,20.5541419 276.222116,22.5337548 279.486116,23.2289806 L277.667535,27.8300129 C275.420052,27.3484645 272.95889,26.278529 270.980052,25.0475613 L270.980052,25.0475613 Z M264.987794,40.9913032 L246.851535,40.9913032 L246.101342,36.8710452 L265.896697,36.8710452 L265.896697,36.9252387 L264.987794,40.9913032 Z M243.640181,5.84136774 L240.965342,5.84136774 C240.537987,8.40936774 240.109858,11.0842065 239.574116,13.8651097 L243.212826,13.8651097 L244.549858,6.85788387 C244.710116,6.05504516 244.3896,5.84136774 243.640181,5.84136774 L243.640181,5.84136774 Z M242.516826,18.0922065 L238.826245,18.0922065 C238.290503,20.8746581 237.701342,23.7639484 237.113729,26.6524645 L240.965342,26.6524645 L242.516826,18.0922065 Z M249.954503,4.34330323 C247.33231,18.7347871 244.977987,32.9652387 242.303923,47.3040774 L236.899277,47.3040774 C237.969213,41.8994323 239.200181,36.1758194 240.109858,30.8795613 L236.257471,30.8795613 C235.080697,36.4436903 233.850503,42.0078194 232.672955,47.3040774 L227.269858,47.3040774 C231.816697,32.8049806 234.064181,17.878529 236.632955,1.40059355 L246.743148,1.40059355 C249.364568,1.40059355 250.436052,1.82872258 249.954503,4.34330323 L249.954503,4.34330323 Z"
+              id="Fill-13"
+              fill="#0052D9"
+            ></path>
+            <g transform="translate(281.806452, 0.000000)">
+              <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+              </mask>
+              <g id="Clip-16"></g>
+              <path
+                d="M42.4295226,1.45424516 L17.4447484,1.45424516 L18.5139097,6.21476129 L37.1866839,6.21476129 C38.4161032,6.21476129 39.0044903,6.37579355 38.7373935,7.76624516 C38.0413935,11.6194065 37.2927484,15.5252129 36.543329,19.3234065 L28.4127484,19.3234065 L29.8024258,11.1912774 L24.1314581,7.87463226 L22.0457806,19.3234065 L15.999329,19.3234065 L15.1964903,24.0846968 L21.1361032,24.0846968 C19.9051355,31.789471 18.4078452,39.653729 16.8563613,47.357729 L23.3301677,47.357729 C24.8274581,39.5995355 26.3247484,31.8428903 27.6091355,24.0846968 L35.6886194,24.0846968 C34.3500387,31.8428903 32.8527484,39.8139871 31.3539097,47.357729 L42.8034581,47.357729 L44.7838452,42.5422452 L38.6839742,42.5422452 C41.0917161,30.2914065 43.607071,17.5040516 45.7461677,5.1456 C46.2277161,2.4699871 45.6927484,1.45424516 42.4295226,1.45424516 L42.4295226,1.45424516 Z M14.9835871,11.2981161 C14.1815226,7.55334194 13.1634581,3.64753548 12.3087484,0.0096 L6.26229677,0.0096 C7.06513548,3.70018065 7.92139355,7.66018065 8.61661935,11.2981161 L14.9835871,11.2981161 Z M1.76810323,13.8126968 L13.0032,13.8126968 C11.8806194,21.3030194 10.5970065,28.8994065 9.15236129,36.4973419 C11.2914581,34.8916645 13.5389419,33.1799226 15.5719742,31.4139871 L14.3952,38.3151484 C10.5970065,41.5265032 5.35261935,45.2712774 0.538683871,48.0003097 C2.62513548,38.3151484 4.55055484,28.0439226 5.94100645,18.5739871 L0.913393548,18.5739871 L1.76810323,13.8126968 Z"
+                id="Fill-15"
+                fill="#0052D9"
+                mask="url(#mask-2)"
+              ></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </symbol>
+  <symbol id="icon-it-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <defs>
+      <style>
+        .cls-1 {
+          fill: #fff;
+        }
+        .cls-1,
+        .cls-2 {
+          stroke-width: 0px;
+        }
+        .cls-2 {
+          fill: #0152d7;
+        }
+      </style>
+    </defs>
+    <path
+      class="cls-1"
+      d="m458.21,188.33h-108l-35.42,199.58h-58.63l30.42-171.46s1.92-13.17,12.92-18c0-.04,21-10.12,21-10.12h-112.42l6.38-35.83h83.42l12.08-68.71,148.25,104.54Z"
+    />
+    <path
+      class="cls-2"
+      d="m250,0c138.08,0,250,111.96,250,250s-111.92,250-250,250S0,388.08,0,250,111.96,0,250,0Zm100.21,188.33h108l-148.25-104.54-12.08,68.71h-83.42l-6.38,35.83h112.42s-21,10.08-21,10.12c-11,4.83-12.92,18-12.92,18l-30.42,171.46h58.63l35.42-199.58Zm-207.04,199.58l41.88-235.42h-58.67l-41.83,235.42h58.62Z"
+    />
+    <polygon
+      class="cls-1"
+      points="185.04 152.5 143.17 387.92 84.54 387.92 126.38 152.5 185.04 152.5"
+    />
+  </symbol>
+
+  <symbol id="icon-notice" viewBox="0 0 20 20" fill="none" width="20" height="20">
+    <path
+      d="M10.0002 19.1668C15.0628 19.1668 19.1668 15.0628 19.1668 10.0002C19.1668 4.93755 15.0628 0.833496 10.0002 0.833496C4.93755 0.833496 0.833496 4.93755 0.833496 10.0002C0.833496 15.0628 4.93755 19.1668 10.0002 19.1668ZM9.16348 7.08351V5.41359H10.8334V7.08351H9.16348ZM10.8334 8.33351L10.8334 14.5835H9.16673V8.33351L10.8334 8.33351Z"
+      fill="#0052D9"
+    />
+  </symbol>
+
+  <symbol id="icon-close" viewBox="0 0 1024 1024">
+    <path
+      fill-opacity="1"
+      fill-rule="evenodd"
+      d="M760.978 217.6l45.255 45.255-248.921 248.889 248.92 248.914-45.254 45.255-248.914-248.921-248.89 248.92-45.254-45.254 248.896-248.914-248.896-248.89 45.255-45.254 248.889 248.896L760.978 217.6z"
+    ></path>
+  </symbol>
+
+  <symbol
+    id="icon-info"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M8.5 4.00037V9.5H7.5V4.00037H8.5Z" fill="black" fill-opacity="0.5" />
+    <path d="M8.59424 10.5H7.39429V11.7H8.59424V10.5Z" fill="black" fill-opacity="0.5" />
+    <path
+      d="M15 8C15 4.13403 11.866 1 8 1C4.13403 1 1 4.13403 1 8C1 11.866 4.13403 15 8 15C11.866 15 15 11.866 15 8ZM14 8C14 11.3137 11.3137 14 8 14C4.68628 14 2 11.3137 2 8C2 4.68628 4.68628 2 8 2C11.3137 2 14 4.68628 14 8Z"
+      fill="black"
+      fill-opacity="0.4"
+    />
+  </symbol>
+
+  <symbol
+    class="darkmode-ignore"
+    id="icon-lang"
+    width="18px"
+    height="18px"
+    viewBox="0 0 18 18"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g
+        id="icon"
+        transform="translate(-428.000000, -338.000000)"
+        fill="#000000"
+        fill-rule="nonzero"
+      >
+        <g id="中英文" transform="translate(428.000000, 338.000000)">
+          <path
+            d="M9.71136157,8.61214078 L9.55426346,8.61214078 L10.1570541,11.9731012 C10.5570766,11.8288039 10.9187549,11.6187488 11.2384066,11.3392727 L11.2384064,11.3392725 C10.9111151,10.9390728 10.6412252,10.4951922 10.43653,10.0204531 L11.0721899,9.93827032 C11.2475444,10.2980977 11.4484616,10.6159374 11.6749611,10.889919 C12.1444045,10.320017 12.5060828,9.56014767 12.7581451,8.61031104 L9.7113614,8.61214252 L9.71136157,8.61214078 Z M12.1115354,11.3411042 C12.4731942,11.655281 12.8860176,11.8835925 13.3499665,12.0260777 L13.6403925,12.1155864 L13.4705324,12.7348019 L13.180087,12.6452932 C12.6229859,12.4754332 12.1097039,12.1831758 11.6749613,11.7941032 C11.2676324,12.159425 10.7908826,12.4388816 10.2721256,12.612424 L10.679474,14.8755876 L8.25919287,14.8755876 L7.93406623,16.3551505 L15.5181464,16.3551505 C15.8743498,16.3551505 16.1629442,16.0665366 16.1629442,15.7103527 L16.1629442,4.74156137 C16.1629442,4.38537751 15.8743303,4.09676356 15.5181464,4.09676356 L8.74326859,4.09676356 L9.24741265,6.90790979 L9.22730534,6.90060336 L9.28575682,7.20930514 L9.29489474,7.16912948 L9.43737997,7.96917444 L11.0009572,7.96917444 L11.0009572,7.32437663 L12.2101626,7.32437663 L12.2101626,7.96917444 L14.2267388,7.96917444 L14.2267388,8.61397226 L13.3864987,8.61397226 C13.1051912,9.74646978 12.6814179,10.6579428 12.1115159,11.3411042 L12.1115354,11.3411042 Z M7.59795071,14.8719246 L1.71266552,14.8719246 C1.0002783,14.8719246 0.423069889,14.2947162 0.423069889,13.5823485 L0.423069889,2.61355713 C0.423069889,1.90118939 1.0002783,1.32398098 1.71266552,1.32398098 L8.16424818,1.32398098 L8.56974561,3.45198523 L15.5163344,3.45198523 C16.2287216,3.45198523 16.80593,4.02919364 16.80593,4.74156137 L16.80593,15.7103527 C16.80593,16.4227205 16.2287216,16.9999289 15.5163344,16.9999289 L7.13035831,16.9999289 L7.59797019,14.8719441 L7.59795071,14.8719246 Z M4.54935505,9.9035484 L4.54935505,9.22590085 L3.2743723,9.22590085 L3.2743723,8.22673117 L4.45984635,8.22673117 L4.45984635,7.55453909 L3.2743723,7.55453909 L3.2743723,6.7033296 L4.54935505,6.7033296 L4.54935505,6.03113752 L2.53277882,6.03113752 L2.53277882,9.90175589 L4.54935505,9.90175589 L4.54935505,9.9035484 Z M7.66554011,9.9035484 L7.66554011,7.97285688 C7.66554011,7.62214797 7.58516932,7.35364134 7.42442773,7.16548601 C7.26368615,6.97918164 7.02621725,6.88600997 6.71570348,6.88600997 C6.53304259,6.88600997 6.37046952,6.92254215 6.22800377,6.99560651 C6.08551853,7.06867086 5.96861556,7.18011836 5.89190773,7.32075263 L5.85171259,7.32075263 L5.75308545,6.94264946 L5.19413339,6.94264946 L5.19413339,9.90358737 L5.92477695,9.90358737 L5.92477695,8.50983119 C5.92477695,8.16095376 5.97044704,7.91070347 6.06176775,7.7590998 C6.15127645,7.60749614 6.30106813,7.5326003 6.50564832,7.5326003 C6.65542051,7.5326003 6.76501705,7.58557683 6.83260645,7.69334188 C6.90202733,7.80110694 6.93672803,7.96003653 6.93672803,8.17373515 L6.93672803,9.90352892 L7.66554011,9.90352892 L7.66554011,9.9035484 Z"
+            id="形状"
+          ></path>
+        </g>
+      </g>
+    </g>
+  </symbol>
+
+  <symbol
+    id="icon-dropdown"
+    viewBox="0 0 1024 1024"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    p-id="1212"
+    width="12"
+    height="12"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <path
+      d="M888.199081 357.349781c12.522198-12.417821 12.626575-32.641421 0.209778-45.11143-6.235005-6.287193-14.408151-9.43079-22.686698-9.43079-8.120958 0-16.241916 3.091408-22.475897 9.274224L511.649006 640.639822 184.662767 310.614363c-6.235005-6.287193-14.46034-9.43079-22.633486-9.43079-8.120958 0-16.241916 3.091408-22.476921 9.274224-12.522198 12.364609-12.626575 32.536021-0.209778 45.110407l349.201194 352.396979c12.416797 12.522198 32.640398 12.574387 45.162596 0.209778 0.104377-0.105401 0.157589-0.314155 0.261966-0.471744 0.523933-0.471744 1.257643-0.62831 1.781576-1.152243L888.199081 357.349781 888.199081 357.349781M888.199081 357.349781 888.199081 357.349781z"
+      p-id="1213"
+      fill="#000000"
+    ></path>
+  </symbol>
+
+  <symbol
+    id="icon-connect-line"
+    width="58"
+    height="2"
+    viewBox="0 0 58 2"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M0.966667 2L0 2L0 0L0.966667 0L0.966667 2ZM4.83333 2L2.9 2L2.9 0L4.83333 0L4.83333 2ZM8.7 2L6.76667 2L6.76667 0L8.7 0V2ZM12.5667 2L10.6333 2V0L12.5667 0V2ZM16.4333 2L14.5 2V0L16.4333 0V2ZM20.3 2L18.3667 2V0L20.3 0V2ZM24.1667 2L22.2333 2V0L24.1667 0V2ZM28.0333 2L26.1 2V0L28.0333 0V2ZM31.9 2L29.9667 2V0L31.9 0V2ZM35.7667 2L33.8333 2V0L35.7667 0V2ZM39.6333 2L37.7 2V0L39.6333 0V2ZM43.5 2L41.5667 2V0L43.5 0V2ZM47.3667 2L45.4333 2V0L47.3667 0V2ZM51.2333 2L49.3 2V0L51.2333 0V2ZM55.1 2L53.1667 2V0L55.1 0V2ZM58 2L57.0333 2V0L58 0V2Z"
+      fill="url(#paint0_linear_30_2131)"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_30_2131"
+        x1="3.71365e-07"
+        y1="2.00001"
+        x2="58.8984"
+        y2="0.250854"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="white" />
+        <stop offset="0.505049" stop-color="#AAB3C2" />
+        <stop offset="1" stop-color="white" stop-opacity="0" />
+      </linearGradient>
+    </defs>
+  </symbol>
+
+  <symbol
+    class="darkmode-ignore"
+    id="icon-mobile-moa"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 34 68"
+  >
+    <rect width="34" height="68" rx="5" fill="url(#fgpv7yci0__paint0_linear_199_719)" />
+    <rect
+      x="2.125"
+      y="2.125"
+      width="29.75"
+      height="63.75"
+      rx="4"
+      fill="url(#fgpv7yci0__paint1_linear_199_719)"
+    />
+    <rect x="2.125" y="2.125" width="29.75" height="63.75" rx="4" fill="#F3F6F9" />
+    <rect
+      x="11.3333"
+      y="3.54199"
+      width="11.3333"
+      height="2.83333"
+      rx="1.41667"
+      fill="#000"
+      fill-opacity=".7"
+    />
+    <path
+      d="M21.4386 44.084H21.2136C19.7583 44.084 19.4279 44.2879 19.1818 45.6589L18.5068 49.4484H19.4349L19.7934 47.4236H21.6988L21.3402 49.4484H22.2893L22.8729 46.1299C22.9362 45.7784 22.9783 45.462 22.9783 45.1737C22.9783 44.3793 22.5776 44.084 21.4386 44.084ZM19.927 46.6572L20.0747 45.8135C20.2083 45.0402 20.3067 44.8644 21.1152 44.8644H21.298C21.8605 44.8644 22.0292 44.9417 22.0292 45.3354C22.0292 45.5182 21.987 45.7995 21.9308 46.1158L21.8323 46.6572H19.927Z"
+      fill="#676767"
+    />
+    <path
+      d="M14.8842 49.4976H16.0583C17.0777 49.4976 17.4222 49.2023 17.6121 48.1266L17.9917 45.9893C18.062 45.5745 18.0901 45.3354 18.0901 45.1316C18.0901 44.3441 17.6683 44.084 16.691 44.084H15.5169C14.4904 44.084 14.1459 44.3793 13.9561 45.455L13.5835 47.5853C13.5061 48.0071 13.478 48.2461 13.478 48.45C13.478 49.2304 13.8999 49.4976 14.8842 49.4976ZM15.2638 48.7172C14.6732 48.7172 14.4342 48.661 14.4342 48.2743C14.4342 48.0915 14.4904 47.7329 14.5678 47.2829L14.8349 45.7854C14.9615 45.0823 15.067 44.8644 15.6294 44.8644H16.3044C16.8949 44.8644 17.141 44.9206 17.141 45.3073C17.141 45.4901 17.0848 45.8417 17.0004 46.2986L16.7332 47.7962C16.6067 48.4922 16.5082 48.7172 15.9458 48.7172H15.2638Z"
+      fill="#676767"
+    />
+    <path
+      d="M11.8561 45.0124L12.0303 44.2002H13L12.8258 45.0124H11.8561ZM11 49.2002L11.75 45.6025H12.6894L11.9394 49.2002H11Z"
+      fill="#676767"
+    />
+    <rect x="6" y="18" width="22" height="22" rx="2.2" fill="#0052D9" />
+    <path
+      d="M27.9998 34.5H24.1622C22.9905 34.5 22.0415 35.4516 22.0415 36.6266V40H25.7998C27.0149 40 27.9998 39.015 27.9998 37.8V34.5Z"
+      fill="#EAEAEA"
+    />
+    <path d="M24.5623 36.1045H23.8941L23.4165 38.8545H24.0848L24.5623 36.1045Z" fill="#0052D9" />
+    <path
+      d="M25.9131 35.4184L25.7798 36.1945H24.8617L24.7915 36.5999H26.0282L25.7966 36.7138C25.6759 36.7686 25.6548 36.9172 25.6548 36.9172L25.3207 38.8545H25.9651L26.3539 36.5984H27.5415L25.9103 35.417L25.9131 35.4184Z"
+      fill="#0052D9"
+    />
+    <path
+      d="M14.1882 29.0967C14.8956 25.115 19.5357 22.6158 23.2148 24.3452C21.6155 21.7464 12.3579 21.7517 10.7798 24.3558C11.0466 26.4396 12.3884 28.2353 14.1882 29.0954V29.0967Z"
+      fill="#fff"
+    />
+    <path
+      d="M19.2888 30.0052C15.4862 31.3829 11.0014 28.6129 10.6603 24.5635C10.071 25.7633 10.4586 28.1165 12.0712 30.925H12.0738C13.705 33.7335 15.5539 35.2439 16.8891 35.3248C16.9276 35.2956 19.5131 33.4959 19.2875 30.0052H19.2888Z"
+      fill="#fff"
+    />
+    <path
+      d="M23.3346 24.5523C21.4818 23.7692 19.2149 23.975 17.5253 25.1337C20.6191 27.7377 20.4638 33.0029 17.1284 35.3256C18.4623 35.234 20.3045 33.725 21.9291 30.9258C23.547 28.1107 23.9319 25.7482 23.3346 24.5523Z"
+      fill="#fff"
+    />
+    <defs>
+      <linearGradient
+        id="fgpv7yci0__paint0_linear_199_719"
+        x1="0"
+        y1="0"
+        x2="41.4445"
+        y2="4.88877"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#ADADAD" />
+        <stop offset="1" stop-color="#7A7A7A" />
+      </linearGradient>
+      <linearGradient
+        id="fgpv7yci0__paint1_linear_199_719"
+        x1="17"
+        y1="2.125"
+        x2="17"
+        y2="65.875"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#fff" />
+        <stop offset="1" stop-color="#DCE9FB" />
+      </linearGradient>
+    </defs>
+  </symbol>
+
+  <symbol
+    id="icon-moa"
+    class="darkmode-ignore"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 22 22"
+  >
+    <rect width="22" height="22" rx="2.2" fill="#0052D9" />
+    <path
+      d="M21.9998 16.5H18.1622C16.9905 16.5 16.0415 17.4516 16.0415 18.6266V22H19.7998C21.0149 22 21.9998 21.015 21.9998 19.8V16.5Z"
+      fill="#EAEAEA"
+    />
+    <path d="M18.5623 18.1045H17.8941L17.4165 20.8545H18.0848L18.5623 18.1045Z" fill="#0052D9" />
+    <path
+      d="M19.9131 17.4184L19.7798 18.1945H18.8617L18.7915 18.5999H20.0282L19.7966 18.7138C19.6759 18.7686 19.6548 18.9172 19.6548 18.9172L19.3207 20.8545H19.9651L20.3539 18.5984H21.5415L19.9103 17.417L19.9131 17.4184Z"
+      fill="#0052D9"
+    />
+    <path
+      d="M8.18817 11.0967C8.89559 7.11497 13.5357 4.61576 17.2148 6.34517C15.6155 3.74641 6.35789 3.75172 4.77979 6.35579C5.04656 8.43957 6.38841 10.2353 8.18817 11.0954V11.0967Z"
+      fill="#fff"
+    />
+    <path
+      d="M13.2888 12.0052C9.48621 13.3829 5.00143 10.6129 4.66033 6.56348C4.07103 7.76331 4.45858 10.1165 6.07119 12.925H6.07385C7.70504 15.7335 9.5539 17.2439 10.8891 17.3248C10.9276 17.2956 13.5131 15.4959 13.2875 12.0052H13.2888Z"
+      fill="#fff"
+    />
+    <path
+      d="M17.3346 6.55233C15.4818 5.76925 13.2149 5.97497 11.5253 7.13366C14.6191 9.73773 14.4638 15.0029 11.1284 17.3256C12.4623 17.234 14.3045 15.725 15.9291 12.9258C17.547 10.1107 17.9319 7.74818 17.3346 6.55233Z"
+      fill="#fff"
+    />
+  </symbol>
+
+  <symbol
+    id="icon-back"
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.7322 3.98242L11.7663 5.01657L7.78338 8.99949L11.7663 12.9824L10.7322 14.0166L5.71509 8.99949L10.7322 3.98242Z"
+      fill="black"
+      fill-opacity="0.9"
+    />
+  </symbol>
+
+  <symbol
+    class="darkmode-ignore"
+    id="icon-mobile-qywx"
+    width="34"
+    height="68"
+    viewBox="0 0 34 68"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="34" height="68" rx="5" fill="url(#paint0_linear_199_717)" />
+    <rect
+      x="2.125"
+      y="2.125"
+      width="29.75"
+      height="63.75"
+      rx="4"
+      fill="url(#paint1_linear_199_717)"
+    />
+    <rect x="2.125" y="2.125" width="29.75" height="63.75" rx="4" fill="#F3F6F9" />
+    <rect
+      x="11.3333"
+      y="3.54199"
+      width="11.3333"
+      height="2.83333"
+      rx="1.41667"
+      fill="black"
+      fill-opacity="0.7"
+    />
+    <rect
+      x="6.25"
+      y="23.25"
+      width="21.5"
+      height="21.5"
+      rx="3.75"
+      fill="white"
+      stroke="#E3E6EB"
+      stroke-width="0.5"
+    />
+    <mask
+      id="mask0_199_717"
+      style="mask-type: luminance"
+      maskUnits="userSpaceOnUse"
+      x="20"
+      y="38"
+      width="4"
+      height="4"
+    >
+      <path
+        d="M22.2727 39.2741C22.2544 39.2696 22.2347 39.2666 22.2165 39.2635C22.1983 39.2605 22.1785 39.2575 22.1588 39.256C21.5956 39.1514 21.0583 38.8816 20.6226 38.4466C20.5908 38.4147 20.5604 38.3829 20.5316 38.3511C20.4435 38.2632 20.2993 38.2632 20.2098 38.3511C20.1263 38.4345 20.1217 38.5648 20.1931 38.6542C20.1976 38.6603 20.2037 38.6664 20.2098 38.6724C20.2204 38.683 20.231 38.6906 20.2416 38.6982C20.2644 38.7194 20.2856 38.7406 20.3069 38.7618C20.7319 39.1862 20.9991 39.7092 21.1099 40.2578C21.1114 40.2881 21.1145 40.32 21.1205 40.3503C21.1251 40.3836 21.1327 40.417 21.1418 40.4503C21.1843 40.6049 21.2647 40.7504 21.3862 40.8717C21.7581 41.243 22.3592 41.243 22.7311 40.8717C23.103 40.5003 23.103 39.9001 22.7311 39.5288C22.6005 39.3984 22.4411 39.3136 22.2727 39.2757"
+        fill="white"
+      />
+    </mask>
+    <g mask="url(#mask0_199_717)">
+      <path d="M23.1092 38.1846H20.043V41.2493H23.1092V38.1846Z" fill="#FB6500" />
+    </g>
+    <mask
+      id="mask1_199_717"
+      style="mask-type: luminance"
+      maskUnits="userSpaceOnUse"
+      x="22"
+      y="36"
+      width="4"
+      height="4"
+    >
+      <path
+        d="M25.4196 36.8508C25.0477 36.4794 24.4466 36.4794 24.0747 36.8508C23.9442 36.9811 23.8591 37.1403 23.8212 37.3085C23.8166 37.3267 23.8136 37.3464 23.8106 37.3646C23.8075 37.3843 23.8045 37.4025 23.803 37.4222C23.6982 37.9845 23.428 38.5211 22.9924 38.9561C22.9605 38.9879 22.9286 39.0182 22.8968 39.047C22.8072 39.1364 22.8072 39.2789 22.8968 39.3683C22.9802 39.4517 23.1108 39.4563 23.2004 39.385C23.2064 39.3805 23.2125 39.3744 23.2186 39.3683C23.2292 39.3577 23.2368 39.3471 23.2444 39.3365C23.2656 39.3138 23.2854 39.2926 23.3081 39.2713C23.7332 38.8469 24.2568 38.5802 24.8063 38.4695C24.8367 38.468 24.8686 38.465 24.8989 38.4589C24.9323 38.4544 24.9657 38.4468 24.9991 38.4377C25.154 38.3953 25.2997 38.3149 25.4211 38.1937C25.793 37.8223 25.793 37.2221 25.4211 36.8508"
+        fill="white"
+      />
+    </mask>
+    <g mask="url(#mask1_199_717)">
+      <path d="M25.7988 36.4717H22.7295V39.5334H25.7988V36.4717Z" fill="#0082EF" />
+    </g>
+    <mask
+      id="mask2_199_717"
+      style="mask-type: luminance"
+      maskUnits="userSpaceOnUse"
+      x="21"
+      y="33"
+      width="3"
+      height="4"
+    >
+      <path
+        d="M21.3922 34.1667C21.0203 34.5381 21.0203 35.1383 21.3922 35.5097C21.5228 35.64 21.6821 35.7249 21.8506 35.7628C21.8688 35.7673 21.8886 35.7704 21.9068 35.7734C21.9265 35.7764 21.9447 35.7794 21.9645 35.781C22.5276 35.8855 23.065 36.1553 23.5006 36.5903C23.5325 36.6222 23.5629 36.654 23.5917 36.6858C23.6813 36.7737 23.824 36.7737 23.9135 36.6858C23.997 36.6025 24.0016 36.4721 23.9287 36.3827C23.9242 36.3766 23.9181 36.3706 23.9135 36.3645C23.9029 36.3539 23.8923 36.3463 23.8817 36.3387C23.8589 36.3175 23.8376 36.2963 23.8164 36.2751C23.3914 35.8507 23.1242 35.3278 23.0134 34.7791C23.0119 34.7488 23.0088 34.7169 23.0028 34.6866C22.9982 34.6533 22.9906 34.6199 22.9815 34.5866C22.939 34.432 22.8586 34.2865 22.7371 34.1652C22.3652 33.7939 21.7641 33.7939 21.3922 34.1652"
+        fill="white"
+      />
+    </mask>
+    <g mask="url(#mask2_199_717)">
+      <path d="M24.0804 33.7881H21.0142V36.8528H24.0804V33.7881Z" fill="#2DBC00" />
+    </g>
+    <mask
+      id="mask3_199_717"
+      style="mask-type: luminance"
+      maskUnits="userSpaceOnUse"
+      x="18"
+      y="35"
+      width="4"
+      height="4"
+    >
+      <path
+        d="M20.3148 37.6719C20.3178 37.6522 20.3208 37.634 20.3224 37.6143C20.4271 37.052 20.6973 36.5154 21.1329 36.0804C21.1648 36.0486 21.1967 36.0183 21.2286 35.9895C21.3166 35.9 21.3166 35.7576 21.2286 35.6681C21.1451 35.5848 21.0145 35.5802 20.925 35.6515C20.9189 35.656 20.9128 35.6621 20.9068 35.6681C20.8961 35.6788 20.8886 35.6894 20.881 35.7C20.8597 35.7227 20.8385 35.7439 20.8172 35.7652C20.3922 36.1895 19.8685 36.4563 19.319 36.567C19.2886 36.5685 19.2568 36.5715 19.2264 36.5776C19.193 36.5821 19.1596 36.5897 19.1262 36.5988C18.9714 36.6412 18.8257 36.7216 18.7042 36.8428C18.3323 37.2142 18.3323 37.8144 18.7042 38.1857C19.0761 38.5571 19.6772 38.5571 20.0491 38.1857C20.1797 38.0554 20.2647 37.8962 20.3026 37.728C20.3072 37.7098 20.3102 37.6901 20.3133 37.6719"
+        fill="white"
+      />
+    </mask>
+    <g mask="url(#mask3_199_717)">
+      <path d="M21.396 35.5029H18.3267V38.5646H21.396V35.5029Z" fill="#FFCC00" />
+    </g>
+    <mask
+      id="mask4_199_717"
+      style="mask-type: luminance"
+      maskUnits="userSpaceOnUse"
+      x="9"
+      y="27"
+      width="14"
+      height="14"
+    >
+      <path
+        d="M22.3379 31.0138C22.0737 30.4712 21.7185 29.968 21.2814 29.5163C20.1793 28.378 18.6356 27.6444 16.9355 27.4519C16.6304 27.4171 16.3283 27.4004 16.0368 27.4004C15.7454 27.4004 15.4691 27.4171 15.1761 27.4489C13.4684 27.6338 11.9156 28.3644 10.8059 29.5027C10.3673 29.9528 10.0105 30.4545 9.7449 30.9956C9.38362 31.7292 9.19995 32.5098 9.19995 33.3131C9.19995 34.3468 9.51569 35.3669 10.1107 36.2611C10.4128 36.7143 10.9061 37.2858 11.36 37.6874L11.1551 39.2986C11.1475 39.3213 11.1384 39.3426 11.1323 39.3653C11.1278 39.3865 11.1262 39.4077 11.1247 39.429C11.1247 39.4456 11.1202 39.4608 11.1202 39.479C11.1202 39.4972 11.1232 39.5138 11.1247 39.532C11.152 39.7973 11.3737 40.0049 11.6454 40.0049C11.741 40.0049 11.8291 39.9776 11.905 39.9337C11.908 39.9337 11.9095 39.9306 11.9125 39.9291C11.9232 39.9231 11.9353 39.917 11.9459 39.9094L12.4362 39.6639L13.898 38.9318C14.3185 39.0515 14.7344 39.1288 15.1746 39.1773C15.46 39.2092 15.7499 39.2243 16.0368 39.2243C16.3237 39.2243 16.6319 39.2061 16.9355 39.1728C17.5351 39.1046 18.1119 38.9667 18.6583 38.7711C18.5991 38.7514 18.5415 38.7257 18.4853 38.6938C18.1498 38.5029 17.9768 38.1391 18.0117 37.7784C17.6201 37.9026 17.2117 37.9906 16.7897 38.0391C16.5332 38.0679 16.2797 38.083 16.0368 38.083C15.794 38.083 15.5541 38.0694 15.3158 38.0436C15.2657 38.0375 15.2156 38.03 15.167 38.0239C14.8392 37.9799 14.5143 37.9133 14.2001 37.8223C14.1363 37.8026 14.068 37.792 13.9997 37.792C13.892 37.792 13.7872 37.8208 13.6794 37.8754C13.6658 37.8829 13.6521 37.889 13.6385 37.8966L12.4378 38.6029L12.3861 38.6332C12.3603 38.6484 12.3452 38.6544 12.3315 38.6544C12.2875 38.6544 12.251 38.6165 12.251 38.5711L12.2981 38.3846C12.3118 38.3346 12.33 38.2664 12.3512 38.1815C12.377 38.083 12.4074 37.9663 12.4393 37.8481C12.4727 37.7177 12.5076 37.5874 12.5364 37.4767C12.5486 37.4328 12.5607 37.3812 12.5607 37.3237C12.5607 37.163 12.4833 37.0099 12.3558 36.9174C12.2905 36.8689 12.2252 36.8189 12.1569 36.7628C12.0522 36.678 11.952 36.5885 11.8549 36.4961C11.5831 36.2384 11.3448 35.958 11.1445 35.6564C10.6724 34.947 10.4234 34.1437 10.4234 33.3313C10.4234 32.7008 10.5676 32.0869 10.853 31.5079C11.0655 31.076 11.3524 30.6728 11.7046 30.3105C12.6169 29.3738 13.9011 28.7736 15.3188 28.619C15.5663 28.5917 15.8076 28.5781 16.0399 28.5781C16.2827 28.5781 16.5362 28.5932 16.7928 28.622C18.2045 28.7827 19.4811 29.386 20.3873 30.3211C20.7379 30.6834 21.0233 31.0866 21.2343 31.5201C21.5151 32.096 21.6563 32.7038 21.6563 33.3283C21.6563 33.3935 21.6518 33.4571 21.6487 33.5223C22.0145 33.298 22.4988 33.3419 22.816 33.6587C22.8312 33.6754 22.8449 33.692 22.86 33.7087C22.8707 33.5753 22.8767 33.442 22.8767 33.3086C22.8767 32.5128 22.6961 31.7398 22.3409 31.0108"
+        fill="white"
+      />
+    </mask>
+    <g mask="url(#mask4_199_717)">
+      <path d="M22.9743 27.2998H9.09863V40.1044H22.9743V27.2998Z" fill="#0082EF" />
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_199_717"
+        x1="0"
+        y1="0"
+        x2="41.4445"
+        y2="4.88877"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#ADADAD" />
+        <stop offset="1" stop-color="#7A7A7A" />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_199_717"
+        x1="17"
+        y1="2.125"
+        x2="17"
+        y2="65.875"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="white" />
+        <stop offset="1" stop-color="#DCE9FB" />
+      </linearGradient>
+    </defs>
+  </symbol>
+
+  <symbol
+    id="icon-moon"
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="currentColor"
+      d="M9.99993 3.12494C6.20294 3.12494 3.12488 6.203 3.12488 10C3.12488 13.797 6.20294 16.8751 9.99993 16.8751C13.7969 16.8751 16.875 13.797 16.875 10C16.875 9.52352 16.8264 9.0577 16.7337 8.6075C16.6752 8.32295 16.4282 8.11628 16.1378 8.10872C15.8474 8.10117 15.5901 8.29473 15.5168 8.57585C15.1411 10.0167 13.8302 11.0795 12.2727 11.0795C10.4212 11.0795 8.92039 9.57869 8.92039 7.72726C8.92039 6.16969 9.98319 4.85879 11.4241 4.48312C11.7052 4.40983 11.8988 4.15249 11.8912 3.86207C11.8836 3.57165 11.677 3.32473 11.3924 3.26616C10.9422 3.1735 10.4764 3.12494 9.99993 3.12494Z"
+    ></path>
+  </symbol>
+  <symbol
+    id="icon-sun"
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="currentColor"
+      d="M9.99996 3.15217C10.5252 3.15217 10.951 2.72636 10.951 2.20109C10.951 1.67582 10.5252 1.25 9.99996 1.25C9.47469 1.25 9.04887 1.67582 9.04887 2.20109C9.04887 2.72636 9.47469 3.15217 9.99996 3.15217Z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M9.99992 4.29348C6.84829 4.29348 4.2934 6.84838 4.2934 10C4.2934 13.1516 6.84829 15.7065 9.99992 15.7065C13.1515 15.7065 15.7064 13.1516 15.7064 10C15.7064 6.84838 13.1515 4.29348 9.99992 4.29348Z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M16.4673 4.4837C16.4673 5.00896 16.0415 5.43478 15.5162 5.43478C14.991 5.43478 14.5652 5.00896 14.5652 4.4837C14.5652 3.95843 14.991 3.53261 15.5162 3.53261C16.0415 3.53261 16.4673 3.95843 16.4673 4.4837Z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M17.7989 10.9511C18.3241 10.9511 18.75 10.5253 18.75 10C18.75 9.47474 18.3241 9.04891 17.7989 9.04891C17.2736 9.04891 16.8478 9.47474 16.8478 10C16.8478 10.5253 17.2736 10.9511 17.7989 10.9511Z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M16.4673 15.5163C16.4673 16.0416 16.0415 16.4674 15.5162 16.4674C14.991 16.4674 14.5652 16.0416 14.5652 15.5163C14.5652 14.991 14.991 14.5652 15.5162 14.5652C16.0415 14.5652 16.4673 14.991 16.4673 15.5163Z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M9.99996 18.75C10.5252 18.75 10.951 18.3242 10.951 17.7989C10.951 17.2736 10.5252 16.8478 9.99996 16.8478C9.47469 16.8478 9.04887 17.2736 9.04887 17.7989C9.04887 18.3242 9.47469 18.75 9.99996 18.75Z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M5.43469 15.5163C5.43469 16.0416 5.00887 16.4674 4.4836 16.4674C3.95833 16.4674 3.53252 16.0416 3.53252 15.5163C3.53252 14.991 3.95833 14.5652 4.4836 14.5652C5.00887 14.5652 5.43469 14.991 5.43469 15.5163Z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M2.20096 10.9511C2.72623 10.9511 3.15205 10.5253 3.15205 10C3.15205 9.47474 2.72623 9.04891 2.20096 9.04891C1.67569 9.04891 1.24988 9.47474 1.24988 10C1.24988 10.5253 1.67569 10.9511 2.20096 10.9511Z"
+    ></path>
+    <path
+      fill="currentColor"
+      d="M5.43469 4.4837C5.43469 5.00896 5.00887 5.43478 4.4836 5.43478C3.95833 5.43478 3.53252 5.00896 3.53252 4.4837C3.53252 3.95843 3.95833 3.53261 4.4836 3.53261C5.00887 3.53261 5.43469 3.95843 5.43469 4.4837Z"
+    ></path>
+  </symbol>
+
+  <symbol
+    id="icon-curve"
+    width="590"
+    height="164"
+    viewBox="0 0 590 164"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <ellipse cx="294.5" cy="248" rx="432.5" ry="248" fill="url(#paint0_radial_131_1095)" />
+    <defs>
+      <radialGradient
+        id="paint0_radial_131_1095"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(295) rotate(90) scale(181.996 249.085)"
+      >
+        <stop stop-color="#E5EAF2" />
+        <stop offset="1" stop-color="white" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+  </symbol>
+  <symbol
+    id="icon-sms"
+    width="48"
+    height="48"
+    viewBox="0 0 48 48"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect x="3" y="3" width="42" height="42" rx="2.4" fill="url(#paint0_linear_37_3312)" />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M29.799 32.9742C25.2707 32.9742 21.5999 29.8907 21.5999 26.0869C21.5999 22.2832 25.2707 19.1997 29.799 19.1997C34.3272 19.1997 37.998 22.2832 37.998 26.0869C37.998 28.5783 36.4232 30.7608 34.0641 31.9701C34.0811 32.1933 34.1188 32.4371 34.2001 32.681C34.5799 33.8203 35.1495 34.2 35.1495 34.2C33.9826 34.2 32.5839 33.4346 31.7305 32.782C31.1111 32.9076 30.4643 32.9742 29.799 32.9742Z"
+      fill="url(#paint1_linear_37_3312)"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M21.6228 32.5817C27.6 32.5817 32.4456 28.5115 32.4456 23.4906C32.4456 18.4697 27.6 14.3994 21.6228 14.3994C15.6455 14.3994 10.8 18.4697 10.8 23.4906C10.8 26.779 12.8785 29.6596 15.9921 31.256C15.9697 31.5505 15.9198 31.8724 15.8125 32.1943C15.3113 33.6981 14.5594 34.1994 14.5594 34.1994C16.0995 34.1994 17.9457 33.1892 19.0721 32.3278C19.89 32.4938 20.7442 32.5817 21.6228 32.5817Z"
+      fill="white"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_37_3312"
+        x1="24"
+        y1="3"
+        x2="24"
+        y2="45"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#639CF8" />
+        <stop offset="1" stop-color="#0766FF" />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_37_3312"
+        x1="29.799"
+        y1="19.1997"
+        x2="29.799"
+        y2="34.2001"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#B1CEFB" />
+        <stop offset="1" stop-color="#7EADF9" />
+      </linearGradient>
+    </defs>
+  </symbol>
+  
+</svg>
+
+
+
+        <div class="fonterWrap" v-cloak>
+            <div class="infoFooter">
+                <img alt="" style="height: 18px; width: 18px" src="./assets/public/images/it-logo.svg" />
+                <span style="font-size:12px;color:#474747;vertical-align: middle;font-weight: bold">[[$t('太湖-TOF提供技术服务')]] </span>
+             </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./assets/public/js/jquery-3.3.1.slim.min.js"
+    onload="if (typeof module === 'object' && typeof module.exports === 'function') { window.$ = window.jQuery = module.exports; }">
+</script>
+<script type="text/javascript" src="./assets/public/js/nacl-util.min.js"></script>
+<script type="text/javascript" src="./assets/public/js/nacl-fast.min.js"></script>
+<script type="text/javascript" src="./assets/public/js/sealedbox.min.js"></script>
+<script type="text/javascript" src="./assets/public/js/security.min.js"></script>
+<script type="text/javascript" src="./assets/public/js/base64.min.js"></script>
+<script type="text/javascript" src="./assets/public/js/qrcode.js?v=djMuNDEuMF8zMjhmYjE3MDg3OTI5MDIzZmFkY2Y2NTFjNDE4ZDNlMGQ0MGM0Mzlm"></script>
+
+    <script type="text/javascript" src="./assets/public/js/banner.js?v=djMuNDEuMF8zMjhmYjE3MDg3OTI5MDIzZmFkY2Y2NTFjNDE4ZDNlMGQ0MGM0Mzlm"></script>
+
+
+    <script type="text/javascript" src="./assets/public/js/app.js?v=djMuNDEuMF8zMjhmYjE3MDg3OTI5MDIzZmFkY2Y2NTFjNDE4ZDNlMGQ0MGM0Mzlm"></script>
+    
+
+
+
+<script type="text/javascript" src="./assets/public/js/darkreader.js?v=djMuNDEuMF8zMjhmYjE3MDg3OTI5MDIzZmFkY2Y2NTFjNDE4ZDNlMGQ0MGM0Mzlm"></script>
+<script>
+  $(document).ready(function() {
+    function onDarkModeChange() {
+      if (DarkReader.isEnabled()) {
+        $(".TDesign-theme-tabs .moon").addClass("active");
+        $(".TDesign-theme-tabs .sun").removeClass("active");
+        $(".TDesign-theme-tabs").addClass("is-dark");
+      } else {
+        $(".TDesign-theme-tabs .sun").addClass("active");
+        $(".TDesign-theme-tabs .moon").removeClass("active");
+        $(".TDesign-theme-tabs").removeClass("is-dark");
+      }
+    }
+
+    var darkFix = {
+      invert: ['.dropbtn'],
+      css: '\
+        body {background-color: #000; }\
+        .login_quick .selected {\
+            color: #0052D9;\
+        }\
+        .quick_login .login_normal { background-color: rgb(29 30 31); } \
+        .login_normal .card-box { background-color: rgb(46 49 51); border-color: rgb(77 81 86); } \
+        .login_normal .connect-line { filter: brightness(3); } \
+      ',
+      ignoreInlineStyle: ['.darkmode-ignore', '.darkmode-ignore *'],
+      ignoreImageAnalysis: [],
+    };
+
+    $(".TDesign-theme-tabs .sun").click(function() {
+      DarkReader.disable();
+      onDarkModeChange();
+    });
+
+    $(".TDesign-theme-tabs .moon").click(function() {
+      DarkReader.enable({}, darkFix);
+      onDarkModeChange();
+    });
+
+    function handleDarkMode() {
+      var darkMode = window.matchMedia("(prefers-color-scheme: dark)");
+      
+      darkMode.addListener(function() {
+        setTimeout(function() {
+          onDarkModeChange();
+        }, 0);
+      })
+
+      
+      DarkReader.auto({}, darkFix);
+      onDarkModeChange();
+    }
+
+    
+    if (window.top === window.self) {
+      handleDarkMode();
+    } else {
+      
+      var darkMode = window.location.search.toLowerCase().match(/darkmode=(\w+)/);
+      console.log('darkmode:', darkMode);
+      if (darkMode) {
+        switch (darkMode[1]) {
+          case 'auto':
+            handleDarkMode();
+            break;
+          case 'true':
+            DarkReader.enable({}, darkFix);
+            onDarkModeChange();
+            break;
+          case 'false':
+            DarkReader.disable();
+            onDarkModeChange();
+            break;
+          default:
+            
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
