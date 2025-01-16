@@ -13,8 +13,12 @@ const sidebar = {
       "link": "/blogs/performance/index"
     },
     {
-      "text": "second",
-      "link": "/blogs/performance/second"
+      "text": "性能优化体系",
+      "link": "/blogs/performance/性能优化体系"
+    },
+    {
+      "text": "长任务处理",
+      "link": "/blogs/performance/长任务处理"
     }
   ]
 };

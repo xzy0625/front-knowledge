@@ -46,6 +46,26 @@ const sidebarItem = {
       ]
     },
     {
+      "originText": "web安全",
+      "text": "web安全",
+      "collapsible": true,
+      "collapsed": true,
+      "items": [
+        {
+          "text": "爬虫攻击",
+          "link": "/blogs/browser/web安全/爬虫攻击"
+        },
+        {
+          "text": "上传接口攻击",
+          "link": "/blogs/browser/web安全/上传接口攻击"
+        },
+        {
+          "text": "xss和csrf",
+          "link": "/blogs/browser/web安全/xss和csrf"
+        }
+      ]
+    },
+    {
       "text": "event-loop",
       "link": "/blogs/browser/event-loop"
     },

@@ -26,6 +26,18 @@ const sidebar = {
       ]
     },
     {
+      "originText": "题目积累",
+      "text": "题目积累",
+      "collapsible": true,
+      "collapsed": true,
+      "items": [
+        {
+          "text": "手写",
+          "link": "/blogs/jsvascript/题目积累/手写"
+        }
+      ]
+    },
+    {
       "originText": "一些特性",
       "text": "一些特性",
       "collapsible": true,
@@ -40,6 +52,10 @@ const sidebar = {
     {
       "text": "代码漏洞",
       "link": "/blogs/jsvascript/代码漏洞"
+    },
+    {
+      "text": "沙箱",
+      "link": "/blogs/jsvascript/沙箱"
     }
   ]
 };
