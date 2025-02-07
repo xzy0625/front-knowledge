@@ -11,6 +11,10 @@ const sidebar = {
     {
       "text": "函数编程范式",
       "link": "/blogs/thinking/函数编程范式"
+    },
+    {
+      "text": "个人成长",
+      "link": "/blogs/thinking/个人成长"
     }
   ]
 };

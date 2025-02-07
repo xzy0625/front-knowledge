@@ -132,7 +132,7 @@ promise 的 `then` 方法接受两个参数：
     promise2 = promise1.then(onFulfilled, onRejected);   
     
 
-*   如果 `onFulfilled` 或者 `onRejected` 返回一个值 `x` ，则运行下面的 **Promise 解决过程**：`[[Resolve]](promise2, x)`
+*   如果 `onFulfilled` 或者 `onRejected` 返回一个值 `x` ，则运行下面的 **Promise 解决过程**：`[[Resolve]](promise2, x)` (注意：只有这种情况才需要解决过程， 具体解决过程可以查看下面的解决过程章节)
 *   如果 `onFulfilled` 或者 `onRejected` 抛出一个异常 `e` ，则 `promise2` 必须拒绝执行，并返回拒因 `e`
 *   如果 `onFulfilled` 不是函数且 `promise1` 成功执行， `promise2` 必须成功执行并返回相同的值
 *   如果 `onRejected` 不是函数且 `promise1` 拒绝执行， `promise2` 必须拒绝执行并返回相同的据因
@@ -244,6 +244,9 @@ promise1 = new Promise((resolve, reject) => {
 console.log(promise1); // [[PromiseState]]:  "fulfilled"  [[PromiseResult]] : 123
 ```
 > 和上面代码的主要区别在于，一个是promise的返回值，一个是看then之后的返回值，比前面多了一次then。
+
+## 参考
+https://juejin.cn/post/7078507565146963998
 
 # 注释
 

@@ -12,6 +12,9 @@
 3. 在reducer中定义一个初始值
 4. 在reducer中定义一个action case
 5. 如果要在组件中使用，还要不感知dispatch的存在，就在mapStateProps中重新定义一个函数绑定上dispatch给组件使用，或者使用useDispatch。
+
+![image-20250205111002380](./assets/image-20250205111002380.png)
+
 ```js
 // 1. 定义一个action type
 const INCREMENT = 'INCREMENT'

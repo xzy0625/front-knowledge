@@ -27,7 +27,11 @@ const sidebar = {
     {
       "text": "前端开发中的一些思考",
       "link": "/blogs/structure/前端开发中的一些思考"
-    }
+    },
+    {
+      "text": "理解业务系统的复杂性",
+      "link": "/blogs/structure/理解业务系统的复杂性"
+    },
   ]
 };
 

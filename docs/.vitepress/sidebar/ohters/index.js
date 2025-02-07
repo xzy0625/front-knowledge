@@ -16,6 +16,10 @@ const sidebar = {
       "text": "tinyproxy搭建私人代理服务器",
       "link": "/blogs/others/tinyproxy搭建私人代理服务器"
     },
+    {
+      "text": "bff和rpc",
+      "link": "/blogs/others/bff和rpc"
+    }
   ]
 };
 

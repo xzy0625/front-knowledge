@@ -22,6 +22,10 @@ const sidebar = {
         {
           "text": "自己实现promise",
           "link": "/blogs/jsvascript/promise/自己实现promise"
+        },
+        {
+          "text": "promise的一些应用",
+          "link": "/blogs/jsvascript/promise/promise的一些应用"
         }
       ]
     },
@@ -48,6 +52,10 @@ const sidebar = {
           "link": "/blogs/jsvascript/一些特性/一些代码实现"
         }
       ]
+    },
+    {
+      "text": "this指向规则",
+      "link": "/blogs/jsvascript/this指向规则"
     },
     {
       "text": "代码漏洞",
